@@ -1,0 +1,7 @@
+<!--pages/goods/index.wxml-->
+<block wx:for="{{goodsList}}" wx:key="index">
+  <view>{{item.title}}</view>
+  <view>{{item.price}}</view>
+  <image src="{{item.cover}}"></image>
+  <button size="mini" type="primary" bindtap="addOrder" data-index="{{index}}">购买</button>
+</block>

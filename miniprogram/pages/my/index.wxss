@@ -1,0 +1,90 @@
+/* pages/my/index.wxss */
+.my-page {
+  height: 100vh;
+  background: linear-gradient(180deg, #E1E8FF 0%, #F6F7FA 100%);
+  padding: 48rpx 24rpx;
+}
+.user-wrap {
+  display: flex;
+}
+.user-info-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 40rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #000000;
+}
+.user-avatar {
+    width: 104rpx;
+    height: 104rpx;
+    margin-right: 34rpx;
+    border-radius: 50%;
+}
+.user-level {
+  width: 160rpx;
+  height: 44rpx;
+  background: #E7E9F1;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #727889;
+  text-align: center;
+  line-height: 44rpx;
+  margin-top: 10rpx;
+}
+.user-zichan {
+  width: 100%;
+  height: 208rpx;
+  display: flex;
+  box-shadow: 0px 0px 12rpx 0px rgba(249,243,241,1);
+  border-radius: 16rpx;
+  margin-top: 40rpx;
+  background: url(https://udh.oss-cn-hangzhou.aliyuncs.com/28f50832-e043-4732-a7f9-5b69453bbe8b66611807398.svg) no-repeat;
+  background-size: 100%;
+}
+.zichan-box {
+  width: 50%;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  padding: 40rpx 0 48rpx;
+}
+.num {
+  font-size: 48rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.menu-wrap {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 0 32rpx;
+  margin-top: 20rpx;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  height: 110rpx;
+  align-items: center;
+  border-bottom: 2rpx solid #EFEFEF;
+  font-size: 28rpx;
+}
+.flex-left {
+  display: flex;
+  align-items: center;
+}
+.icon-left {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right:20rpx;
+}
+.icon-arrow {
+  width: 30rpx;
+  height: 30rpx;
+}

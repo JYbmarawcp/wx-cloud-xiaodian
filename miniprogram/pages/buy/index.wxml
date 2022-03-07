@@ -1,0 +1,9 @@
+<view class="buy-page">
+  <view class="top-box">
+    <view class="item-box">
+      <text>消费总额</text>
+      <input class="input-text" maxlength="5"	placeholder-class="grey-color" placeholder="请输入金额" type="number" />
+      <view>元</view>
+    </view>
+  </view>
+</view>

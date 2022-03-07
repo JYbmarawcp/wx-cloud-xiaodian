@@ -1,0 +1,32 @@
+/* pages/buy/index.wxss */
+page {
+  background: #F5F5F5;
+
+}
+.buy-page {
+  padding: 48rpx 24rpx;
+}
+.top-box {
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 12rpx 24rpx;
+}
+.item-box {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.border-btn {
+  border-bottom: 2rpx solid #EFEFEF;
+}
+.grey-color {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 26rpx;
+}
+.input-text {
+  text-align: right;
+  flex: 1;
+  margin-right: 14rpx;
+}
