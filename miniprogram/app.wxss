@@ -24,4 +24,5 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  font-family: PingFang SC-Regular, PingFang SC;
 }

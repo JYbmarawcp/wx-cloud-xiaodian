@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    switch1Checked: false,
+    price: 0
   },
 
   /**
@@ -14,53 +15,67 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  switch1Change() {
+    this.setData({
+      switch1Checked: !this.data.switch1Checked
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  changeInput(e) {
+    const price = Number(e.detail.value);
+    this.setData({
+      price
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  addOrder() {
+    let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
+    // 添加订单
+    wx.cloud.database().collection('orders').add({
+      data: {
+        orderId,
+        goodMoney: this.data.price,
+        status: 0 //未支付状态
+      }
+    }).then(res => {
+      this.setData({
+        order_id: res._id
+      })
+      wx.cloud.callFunction({
+        name: 'buy_pay',
+        data: {
+          body: "买单",
+          outTradeNo: orderId,
+          totalFee: this.data.price * 100,
+        }
+      }).then(res => {
+          this.pay(res.result.payment)
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  pay(payment) {
+    var that = this;
+    wx.requestPayment({
+      ...payment,
+      success(res) {
+        console.log(res);
+        wx.cloud.database().collection('orders').doc(that.data.order_id).update({
+          data: {
+            status: 1
+          },
+          success(res) {
+            console.log(res);
+            wx.showToast({
+              title: '支付成功',
+            })
+          }
+        })
+      },
+      fail(res) {
+        console.log(res);
+        wx.showToast({
+          icon: 'none',
+          title: '支付失败',
+        })
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

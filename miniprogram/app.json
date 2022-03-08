@@ -15,6 +15,7 @@
     "pages/goods/index",
     "pages/order/index",
     "pages/buy/index",
+    "pages/balance/index",
     "pages/my/index"
   ],
   "window": {

@@ -30,3 +30,37 @@ page {
   flex: 1;
   margin-right: 14rpx;
 }
+.item-wrap {
+  margin-top: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 0rpx 24rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.botton-box {
+  text-align: center;
+  margin-top: 30rpx;
+}
+.price-box {
+  font-size: 44rpx;
+  color: #FF4444;
+}
+.text-line {
+  font-size: 28rpx;
+  margin-top: 12rpx;
+  color: rgba(0, 0, 0, 0.4);
+}
+.btn-pay {
+  width: 60%;
+  margin: 12rpx auto;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background-color: #FF4444;
+  line-height: 80rpx;
+  color: #FFFFFF;
+  font-size: 30rpx;
+}

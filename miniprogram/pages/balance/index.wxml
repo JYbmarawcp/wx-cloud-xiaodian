@@ -1,0 +1,21 @@
+<view class="balance-page">
+  <view class="top-box">
+    <view>当前余额</view>
+    <view class="balance-text">￥{{balance}}</view>
+  </view>
+
+  <view class="grey-wrap">请选择充值类型</view>
+  <view class="item-box">
+    <view class="flex-center">
+      <text>600</text>
+      <text class="fs28">元</text>
+    </view>
+    <view class="flex-center fs24">
+      <text class="color-b">充</text>
+      <text>500</text>
+      <text class="color-b">元</text>
+    </view>
+  </view>
+
+  <view class="btn-pay" >立即充值</view>
+</view>

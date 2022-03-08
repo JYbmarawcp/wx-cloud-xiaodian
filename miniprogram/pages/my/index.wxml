@@ -18,7 +18,7 @@
         <view>积分</view>
         <view class="num">1000</view>
       </view>
-      <view class="zichan-box">
+      <view class="zichan-box" bindtap="goToBalance">
         <view>余额</view>
         <view class="num">1000</view>
       </view>

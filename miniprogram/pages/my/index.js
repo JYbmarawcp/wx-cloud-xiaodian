@@ -36,5 +36,10 @@ Page({
     wx.navigateTo({
       url: '/pages/buy/index',
     })
+  },
+  goToBalance() {
+    wx.navigateTo({
+      url: '/pages/balance/index',
+    })
   }
 })

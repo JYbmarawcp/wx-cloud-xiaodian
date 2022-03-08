@@ -2,8 +2,30 @@
   <view class="top-box">
     <view class="item-box">
       <text>消费总额</text>
-      <input class="input-text" maxlength="5"	placeholder-class="grey-color" placeholder="请输入金额" type="number" />
+      <input 
+        class="input-text" 
+        maxlength="5"	
+        placeholder-class="grey-color" 
+        placeholder="请输入金额" 
+        type="number"
+        bindinput="changeInput"
+      />
       <view>元</view>
     </view>
+  </view>
+  <view class="item-wrap">
+    <text>优惠券</text>
+    <view>暂无可用优惠券</view>
+  </view>
+  <view class="item-wrap">
+    <view>我的余额（￥0.00）</view>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
+  </view>
+  <view class="botton-box">
+    <view class="price-box">
+      ￥{{price}}
+    </view>
+    <view class="text-line">实际支付金额</view>
+    <view bindtap="addOrder" class="btn-pay">立即支付</view>
   </view>
 </view>
