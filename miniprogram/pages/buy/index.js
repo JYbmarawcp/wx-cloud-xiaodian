@@ -1,38 +1,71 @@
-// pages/buy/index.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     switch1Checked: false,
-    price: 0
+    price: null,
+    realAmount: 0,
+    userInfo: {}
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    wx.cloud.database().collection('users').where({
+      _openid: app.globalData.openid
+    }).get().then(res => {
+      this.setData({
+        userInfo: res.data[0]
+      })
+    })
   },
   switch1Change() {
+    if (!this.data.switch1Checked && this.data.price) {
+      if (this.data.userInfo.balance >= this.data.price) {
+        this.setData({
+          realAmount: 0,
+        })
+      } else {
+        const realAmount = ((this.data.price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
+        this.setData({
+          realAmount
+        })
+      }
+    } else {
+      this.setData({
+        realAmount: this.data.price,
+      })
+    }
     this.setData({
       switch1Checked: !this.data.switch1Checked
     })
   },
   changeInput(e) {
-    const price = Number(e.detail.value);
-    this.setData({
-      price
-    })
+    const price = Number(e.detail.value)
+    if (this.data.switch1Checked) {
+      if (this.data.userInfo.balance >= price) {
+        this.setData({
+          price,
+          realAmount: 0,
+        })
+      } else {
+        const realAmount = ((price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
+        this.setData({
+          price,
+          realAmount
+        })
+      }
+    } else {
+      this.setData({
+        price,
+        realAmount: price
+      })
+    }
   },
   addOrder() {
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
     // 添加订单
+    const price = this.data.realAmount ? this.data.realAmount : 0;
     wx.cloud.database().collection('orders').add({
       data: {
         orderId,
-        goodMoney: this.data.price,
+        goodMoney: price,
         status: 0 //未支付状态
       }
     }).then(res => {
@@ -44,7 +77,7 @@ Page({
         data: {
           body: "买单",
           outTradeNo: orderId,
-          totalFee: this.data.price * 100,
+          totalFee: price * 100,
         }
       }).then(res => {
           this.pay(res.result.payment)

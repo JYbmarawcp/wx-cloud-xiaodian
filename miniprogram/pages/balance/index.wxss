@@ -1,7 +1,7 @@
 /* pages/balance/index.wxss */
 
 .balance-page {
-  padding: 24rpx;
+  padding: 32rpx;
 }
 .top-box {
   text-align: center;

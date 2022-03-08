@@ -16,11 +16,11 @@
     <view class="user-zichan">
       <view class="zichan-box">
         <view>积分</view>
-        <view class="num">1000</view>
+        <view class="num">0</view>
       </view>
       <view class="zichan-box" bindtap="goToBalance">
         <view>余额</view>
-        <view class="num">1000</view>
+        <view class="num">{{userInfo.balance || 0.00}}</view>
       </view>
     </view>
   </view>

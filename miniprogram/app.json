@@ -28,14 +28,10 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "剧本目录",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "剧本目录"
     },{
       "pagePath": "pages/my/index",
-      "text": "个人档案",
-      "iconPath": "",
-      "selectedIconPath": ""
+      "text": "个人档案"
     }]
   },
   "sitemapLocation": "sitemap.json",

@@ -1,7 +1,7 @@
 <view class="balance-page">
   <view class="top-box">
     <view>当前余额</view>
-    <view class="balance-text">￥{{balance}}</view>
+    <view class="balance-text">￥{{userInfo.balance || 0.00}}</view>
   </view>
 
   <view class="grey-wrap">请选择充值类型</view>
@@ -17,5 +17,5 @@
     </view>
   </view>
 
-  <view class="btn-pay" >立即充值</view>
+  <view class="btn-pay" bindtap="addOrder">立即充值</view>
 </view>
