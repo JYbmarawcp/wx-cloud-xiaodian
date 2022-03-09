@@ -4,6 +4,7 @@ Page({
     switch1Checked: false,
     price: null,
     realAmount: 0,
+    useBalance: 0,
     userInfo: {}
   },
   onLoad: function (options) {
@@ -20,16 +21,19 @@ Page({
       if (this.data.userInfo.balance >= this.data.price) {
         this.setData({
           realAmount: 0,
+          useBalance: this.data.price
         })
       } else {
         const realAmount = ((this.data.price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
         this.setData({
-          realAmount
+          realAmount,
+          useBalance: this.data.userInfo.balance
         })
       }
     } else {
       this.setData({
         realAmount: this.data.price,
+        useBalance: 0
       })
     }
     this.setData({
@@ -43,18 +47,21 @@ Page({
         this.setData({
           price,
           realAmount: 0,
+          useBalance: price
         })
       } else {
         const realAmount = ((price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
         this.setData({
           price,
-          realAmount
+          realAmount,
+          useBalance: this.data.userInfo.balance
         })
       }
     } else {
       this.setData({
         price,
-        realAmount: price
+        realAmount: price,
+        useBalance: 0
       })
     }
   },

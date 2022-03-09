@@ -28,5 +28,6 @@
     </view>
     <view class="text-line">实际支付金额</view>
     <view bindtap="addOrder" class="btn-pay">立即支付</view>
+    <view>{{useBalance}}</view>
   </view>
 </view>
