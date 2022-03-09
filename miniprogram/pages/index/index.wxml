@@ -1,32 +1,39 @@
 <!--index.wxml-->
-<view class="container">
-
-  <view class="title">快速了解云开发</view>
-
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">{{power.title}}</view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
+<view class="home-page">
+  <view class="tab-wrap">
+    <view class="person-wrap">
+      <block wx:for="{{personTab}}" wx:key="index">
+        <view bindtap="sort" data-index="{{item}}" class="tab-item">{{item}}人</view>
+      </block>
     </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+  </view>
+  <view class="search-wrap">
+    <view class="search-box">
+      <image class="icon-search" src="https://udh.oss-cn-hangzhou.aliyuncs.com/bfcae5a6-e5f0-4f06-b538-5552f9406c9883640299918.svg"></image>
+      <input placeholder="请输入剧本名" placeholder-class="placeholderColor" bindconfirm="search"  />
+    </view>
+  </view>
+  <view class="drama-list">
+    <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index">
+      <view class="bg">
+        <image class="bg-img" src="{{item.cover}}"></image>
+      </view>
+      <view class="content-box">
+        <view class="top-wrap">难度：{{item.level}}</view>
+        <view class="center-box">
+          <view class="left-box">
+            <block wx:for="{{item.types}}" wx:for-item="ele" wx:key="ele">
+              <view>{{ele}}</view>
+            </block>
+          </view>
+          <image class="img-cover" mode="widthFix" src="{{item.cover}}"></image>
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="botton-wrap">
+          <text class="price">{{item.price}}元/位</text>
+          <text class="btn-box">探索</text>
         </view>
       </view>
     </view>
   </view>
-
-  <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
-
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
-
 </view>
