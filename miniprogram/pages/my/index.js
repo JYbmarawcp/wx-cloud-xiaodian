@@ -48,5 +48,11 @@ Page({
     wx.navigateTo({
       url: '/pages/balance/index',
     })
+  },
+  goToPoint() {
+    wx.showToast({
+      icon: "none",
+      title: '暂未开放',
+    })
   }
 })

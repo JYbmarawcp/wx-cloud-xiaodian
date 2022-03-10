@@ -26,3 +26,15 @@ page {
   justify-content: flex-start;
   font-family: PingFang SC-Regular, PingFang SC;
 }
+
+.default-btn {
+  width: auto;
+  line-height: inherit;
+  height: auto;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 0;
+  text-align: left;
+  margin: 0;
+}

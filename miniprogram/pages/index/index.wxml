@@ -10,7 +10,7 @@
   <view class="search-wrap">
     <view class="search-box">
       <image class="icon-search" src="https://udh.oss-cn-hangzhou.aliyuncs.com/bfcae5a6-e5f0-4f06-b538-5552f9406c9883640299918.svg"></image>
-      <input placeholder="请输入剧本名" placeholder-class="placeholderColor" bindconfirm="search"  />
+      <input value="{{key}}" bindinput="changeInput" placeholder="请输入剧本名" placeholder-class="placeholderColor" bindconfirm="search"  />
     </view>
   </view>
   <view class="drama-list">

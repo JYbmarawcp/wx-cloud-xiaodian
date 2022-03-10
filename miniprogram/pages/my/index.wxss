@@ -74,6 +74,7 @@
   align-items: center;
   border-bottom: 2rpx solid #EFEFEF;
   font-size: 28rpx;
+  font-weight: normal;
 }
 .flex-left {
   display: flex;

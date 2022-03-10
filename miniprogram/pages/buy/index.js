@@ -8,6 +8,9 @@ Page({
     userInfo: {}
   },
   onLoad: function (options) {
+    this.getUser()
+  },
+  getUser() {
     wx.cloud.database().collection('users').where({
       _openid: app.globalData.openid
     }).get().then(res => {
@@ -95,17 +98,30 @@ Page({
     var that = this;
     wx.requestPayment({
       ...payment,
-      success(res) {
-        console.log(res);
+      success() {
+        wx.cloud.database().collection('account').add({
+          data: {
+            amount: that.data.useBalance,
+            type: "reduce"
+          }
+        })
+        wx.cloud.callFunction({
+          name: 'update_balance',
+          data: {
+            totalFee: -that.data.useBalance,
+          }
+        })
+
         wx.cloud.database().collection('orders').doc(that.data.order_id).update({
           data: {
-            status: 1
+            status: 1,
+            useBalance: that.data.useBalance
           },
-          success(res) {
-            console.log(res);
+          success() {
             wx.showToast({
               title: '支付成功',
             })
+            this.getUser()
           }
         })
       },
