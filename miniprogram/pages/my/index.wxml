@@ -16,7 +16,7 @@
     <view class="user-zichan">
       <view class="zichan-box">
         <view>积分</view>
-        <view class="num">0</view>
+        <view class="num">{{userInfo.point || 0.00}}</view>
       </view>
       <view class="zichan-box" bindtap="goToBalance">
         <view>余额</view>
@@ -25,13 +25,13 @@
     </view>
   </view>
   <view class="menu-wrap">
-    <view class="menu-item" bindtap="goToBuy">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="default-btn menu-item" style="width: 100%;" bindtap="goToBuy">
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/86472014-ec5f-4ccf-94d5-b1623703821866617619776.svg"></image>
         <text>买单</text>
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
-    </view>
+    </button>
     <view class="menu-item" bindtap="goToPoint">
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/afad56be-b0e0-4856-98a0-cf752ced4cda46662917315.svg"></image>

@@ -12,6 +12,7 @@ exports.main = async (event, context) => {
   }).update({
     data: {
       balance: _.inc(event.totalFee),
+      point: _.inc(event.point),
     }
   }).then(res => {
     return {

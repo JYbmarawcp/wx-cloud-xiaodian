@@ -1,0 +1,50 @@
+page {
+  background-color: #F4F4F4;
+}
+.pay-content {
+  position: relative;
+  margin: 116rpx auto 0rpx;
+  width: 710rpx;
+  height: 754rpx;
+  background: url("https://udh.oss-cn-hangzhou.aliyuncs.com/cc4901ef-2469-40f0-8060-ad88265eb6814612799762x.png") no-repeat;
+  background-size: 100%;
+  text-align: center;
+
+}
+.pay-content::before {
+  content: "";
+  background: url("https://udh.oss-cn-hangzhou.aliyuncs.com/3721dd29-77ca-4519-8ca8-a16959d813f00516845242x.png") no-repeat;
+  background-size: 166rpx 158rpx;
+  width: 166rpx;
+  height: 158rpx;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%, -32%);
+}
+.pay_amount {
+  font-size: 64rpx;
+  color: #333333;
+  margin: 90rpx 0 12rpx;
+  padding-top: 90rpx;
+}
+
+.fontb {
+  font-weight: bold;
+  color: #333333;
+  margin: 30rpx 0;
+}
+.btn {
+  margin: 70rpx auto 0;
+  width: 50%;
+  height: 80rpx;
+  background: #FFFFFF;
+  color: #666666;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  border: 2rpx solid #DCDCDC;
+}
+.fs-s {
+  color: #666666;
+  font-size: 22rpx;
+}

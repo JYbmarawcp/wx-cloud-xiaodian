@@ -17,7 +17,15 @@ page {
   justify-content: flex-start;
 }
 .tab-item {
-  margin-right: 30rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 10rpx;
+}
+.active {
+  font-weight: bold;
+  background-color: #d4a94b;
+  color: #000000;
 }
 .drama-list {
   box-sizing: border-box;
@@ -48,12 +56,12 @@ page {
   overflow: hidden;
 }
 .left-box {
-  padding: 12rpx 0;
   line-height: 44rpx;
   margin-right: 14rpx;
 }
 .img-cover {
   width: 234rpx;
+  height: 302rpx;
 }
 .title {
   text-align: center;

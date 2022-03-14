@@ -1,1 +1,1 @@
-"D:\Î¢ÐÅweb¿ª·¢Õß¹¤¾ß\cli.bat" cloud functions deploy --e jubensha-3grk07ua57c738f5 --n quickstartFunctions --r --project "C:\Users\chuguangxiu\WeChatProjects\miniprogram-1" --report_first --report
+"D:\Î¢ï¿½ï¿½webï¿½ï¿½ï¿½ï¿½ï¿½ß¹ï¿½ï¿½ï¿½\cli.bat" cloud functions deploy --e jubensha-3grk07ua57c738f5 --n quickstartFunctions --r --project "C:\Users\chuguangxiu\WeChatProjects\miniprogram-1" --report_first --report

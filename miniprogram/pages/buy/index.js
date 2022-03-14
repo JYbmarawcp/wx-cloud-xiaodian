@@ -5,7 +5,7 @@ Page({
     price: null,
     realAmount: 0,
     useBalance: 0,
-    userInfo: {}
+    userInfo: {},
   },
   onLoad: function (options) {
     this.getUser()
@@ -17,6 +17,11 @@ Page({
       this.setData({
         userInfo: res.data[0]
       })
+    })
+  },
+  goToBalance() {
+    wx.navigateTo({
+      url: '/pages/balance/index',
     })
   },
   switch1Change() {
@@ -35,7 +40,7 @@ Page({
       }
     } else {
       this.setData({
-        realAmount: this.data.price,
+        realAmount: this.data.price || 0,
         useBalance: 0
       })
     }
@@ -69,32 +74,75 @@ Page({
     }
   },
   addOrder() {
+    if (!this.data.price) {
+      wx.showToast({
+        icon: "none",
+        title: '请输入金额',
+      })
+      return;
+    }
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
     // 添加订单
-    const price = this.data.realAmount ? this.data.realAmount : 0;
+    const price = this.data.realAmount ? Number(this.data.realAmount) : 0;
     wx.cloud.database().collection('orders').add({
       data: {
         orderId,
         goodMoney: price,
-        status: 0 //未支付状态
+        status: 0, //未支付状态
+        _createTime: +new Date(),
+        _updateTime: +new Date(),
       }
     }).then(res => {
+      const that = this;
       this.setData({
         order_id: res._id
       })
-      wx.cloud.callFunction({
-        name: 'buy_pay',
-        data: {
-          body: "买单",
-          outTradeNo: orderId,
-          totalFee: price * 100,
-        }
-      }).then(res => {
-          this.pay(res.result.payment)
-      })
+      if (price) {
+        // 有实际金额支付
+        wx.cloud.callFunction({
+          name: 'buy_pay',
+          data: {
+            body: "买单",
+            outTradeNo: orderId,
+            totalFee: price * 100,
+          }
+        }).then(res => {
+            this.pay(res.result.payment, price)
+        })
+      } else {
+        // 全余额支付
+        wx.cloud.database().collection('account').add({
+          data: {
+            amount: this.data.useBalance,
+            type: "reduce"
+          }
+        })
+        wx.cloud.callFunction({
+          name: 'update_balance',
+          data: {
+            totalFee: -this.data.useBalance,
+          }
+        })
+
+        wx.cloud.database().collection('orders').doc(this.data.order_id).update({
+          data: {
+            status: 1,
+            useBalance: this.data.useBalance,
+            _updateTime: +new Date(),
+          },
+          success() {
+            wx.redirectTo({
+              url: '/pages/paySuccess/index?order_id=' + that.data.order_id,
+            })
+            wx.showToast({
+              title: '支付成功',
+            })
+          }
+        })
+      }
     })
   },
-  pay(payment) {
+  pay(payment, point) {
     var that = this;
     wx.requestPayment({
       ...payment,
@@ -109,19 +157,23 @@ Page({
           name: 'update_balance',
           data: {
             totalFee: -that.data.useBalance,
+            point: point
           }
         })
 
         wx.cloud.database().collection('orders').doc(that.data.order_id).update({
           data: {
             status: 1,
-            useBalance: that.data.useBalance
+            useBalance: that.data.useBalance,
+            _updateTime: +new Date(),
           },
           success() {
+            wx.redirectTo({
+              url: '/pages/paySuccess/index?order_id=' + that.data.order_id
+            })
             wx.showToast({
               title: '支付成功',
             })
-            this.getUser()
           }
         })
       },

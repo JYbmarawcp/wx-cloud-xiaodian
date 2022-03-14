@@ -16,7 +16,9 @@ Page({
       data: {
         orderId,
         goodMoney: price,
-        status: 0 //未支付状态
+        status: 0, //未支付状态
+        _createTime: +new Date(),
+        _updateTime: +new Date(),
       }
     }).then(res => {
       this.setData({
@@ -39,24 +41,28 @@ Page({
     wx.requestPayment({
       ...payment,
       success(res) {
+        const realPrice = price + 100;
         wx.cloud.database().collection('account').add({
           data: {
-            amount: price,
+            amount: realPrice,
             type: "add"
           }
         })
         wx.cloud.callFunction({
           name: 'update_balance',
           data: {
-            totalFee: price,
+            totalFee: realPrice,
+            point: price
           }
+        }).then(res => {
+          that.getBalane()
         })
         wx.cloud.database().collection('orders').doc(that.data.order_id).update({
           data: {
-            status: 1
+            status: 1,
+            _updateTime: +new Date(),
           },
           success(res) {
-            that.getBalane()
             wx.showToast({
               title: '充值成功',
             })

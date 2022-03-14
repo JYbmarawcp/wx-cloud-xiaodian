@@ -3,7 +3,8 @@
   <view class="tab-wrap">
     <view class="person-wrap">
       <block wx:for="{{personTab}}" wx:key="index">
-        <view bindtap="sort" data-index="{{item}}" class="tab-item">{{item}}人</view>
+        <view wx:if="{{item>0}}" bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">{{item}}人</view>
+        <view wx:else bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">全部</view>
       </block>
     </view>
   </view>
@@ -26,7 +27,7 @@
               <view>{{ele}}</view>
             </block>
           </view>
-          <image class="img-cover" mode="widthFix" src="{{item.cover}}"></image>
+          <image class="img-cover" src="{{item.cover}}"></image>
         </view>
         <view class="title">{{item.title}}</view>
         <view class="botton-wrap">

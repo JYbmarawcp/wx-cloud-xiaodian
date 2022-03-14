@@ -19,7 +19,7 @@
     <view>暂无可用优惠券</view>
   </view>
   <view class="item-wrap">
-    <view>我的余额（￥{{userInfo.balance || 0}}）</view>
+    <view bindtap="goToBalance">我的余额（￥{{userInfo.balance || 0}}）</view>
     <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
   </view>
   <view class="botton-box">
@@ -28,6 +28,5 @@
     </view>
     <view class="text-line">实际支付金额</view>
     <view bindtap="addOrder" class="btn-pay">立即支付</view>
-    <view>{{useBalance}}</view>
   </view>
 </view>

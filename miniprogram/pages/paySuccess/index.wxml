@@ -1,0 +1,14 @@
+<view class="pay-content">
+  <view class="pay_amount">¥{{price}}</view>
+  <view>支付完成</view>
+  <view class="fontb">影子剧社</view>
+  <view class="fs-s">
+    订单id: {{order.orderId}}
+  </view>
+  <view class="fs-s">
+    支付时间: {{time}}
+  </view>
+  <view class="flex">
+    <navigator hover-class="none" open-type="switchTab" url="/pages/index/index" class="btn">回到首页</navigator>
+  </view>
+</view>
