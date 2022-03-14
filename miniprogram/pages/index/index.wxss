@@ -115,6 +115,9 @@ page {
   height: 36rpx;
   margin-right: 18rpx;
 }
+.search-input {
+  flex: 1;
+}
 .placeholderColor {
   color: #AAAAAA;
 }
