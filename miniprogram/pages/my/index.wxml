@@ -18,14 +18,14 @@
         <view>积分</view>
         <view class="num">{{userInfo.point || 0.00}}</view>
       </view>
-      <view class="zichan-box" bindtap="goToBalance">
+      <button open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" bindgetphonenumber="getPhoneNumber" class="default-btn zichan-box" bindtap="goToBalance">
         <view>余额</view>
         <view class="num">{{userInfo.balance || 0.00}}</view>
-      </view>
+      </button>
     </view>
   </view>
   <view class="menu-wrap">
-    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="default-btn menu-item" style="width: 100%;" bindtap="goToBuy">
+    <button open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" bindgetphonenumber="getPhoneNumber" class="default-btn menu-item" style="width: 100%;" bindtap="goToBuy">
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/86472014-ec5f-4ccf-94d5-b1623703821866617619776.svg"></image>
         <text>买单</text>

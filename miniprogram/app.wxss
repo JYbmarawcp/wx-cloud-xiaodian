@@ -32,7 +32,7 @@ page {
   line-height: inherit;
   height: auto;
   border: none;
-  background-color: #ffffff;
+  background-color: transparent;
   border-radius: 0;
   padding: 0;
   text-align: left;
