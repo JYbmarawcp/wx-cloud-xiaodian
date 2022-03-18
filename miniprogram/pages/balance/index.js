@@ -2,7 +2,7 @@ const app = getApp()
 Page({
   data: {
     balance: "0.00",
-    price: 0.01,
+    price: 500,
     userInfo: {}
   },
   onLoad: function (options) {

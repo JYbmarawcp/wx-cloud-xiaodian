@@ -65,6 +65,12 @@
           "pathName": "pages/paySuccess/index",
           "query": "order_id=617ef50c622f07e20b82d39702dcd108",
           "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
