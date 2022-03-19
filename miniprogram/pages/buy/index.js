@@ -81,6 +81,9 @@ Page({
       })
       return;
     }
+    wx.showLoading({
+      title: '加载中~',
+    })
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
     // 添加订单
     const price = this.data.realAmount ? Number(this.data.realAmount) : 0;
@@ -144,6 +147,7 @@ Page({
   },
   pay(payment, point) {
     var that = this;
+    wx.hideLoading();
     wx.requestPayment({
       ...payment,
       success() {
@@ -178,7 +182,6 @@ Page({
         })
       },
       fail(res) {
-        console.log(res);
         wx.showToast({
           icon: 'none',
           title: '支付失败',

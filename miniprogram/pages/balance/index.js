@@ -9,6 +9,9 @@ Page({
     this.getBalane()
   },
   addOrder() {
+    wx.showLoading({
+      title: '加载中~',
+    })
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
     const price = this.data.price;
     // 添加订单
@@ -38,6 +41,7 @@ Page({
   },
   pay(payment, price) {
     var that = this;
+    wx.hideLoading();
     wx.requestPayment({
       ...payment,
       success(res) {
