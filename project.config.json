@@ -36,7 +36,7 @@
     "minifyWXSS": true,
     "showES6CompileOption": false
   },
-  "appid": "wx28ffdeea92581ee2",
+  "appid": "wxf1dd97db61f94b00",
   "projectname": "wx-cloud-xiaodian",
   "libVersion": "2.14.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",

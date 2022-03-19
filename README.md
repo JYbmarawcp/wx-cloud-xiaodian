@@ -10,3 +10,6 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+### 正式： wx28ffdeea92581ee2  yzjs-6gsqlx7v8a6f5ee4
+
+### 测试： wxf1dd97db61f94b00  jubensha-3grk07ua57c738f5
