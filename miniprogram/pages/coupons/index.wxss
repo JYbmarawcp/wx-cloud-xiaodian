@@ -1,0 +1,17 @@
+/* pages/coupons/index.wxss */
+.tabs-list {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+}
+.tabs-item {
+  padding: 22rpx 0 16rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #828282;
+  flex: 1;
+}
+.active_item {
+  color: #333333;
+  font-weight: 600;
+}

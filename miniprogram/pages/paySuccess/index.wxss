@@ -5,7 +5,7 @@ page {
   position: relative;
   margin: 116rpx auto 0rpx;
   width: 710rpx;
-  height: 754rpx;
+  height: 854rpx;
   background: url("https://udh.oss-cn-hangzhou.aliyuncs.com/cc4901ef-2469-40f0-8060-ad88265eb6814612799762x.png") no-repeat;
   background-size: 100%;
   text-align: center;
@@ -33,9 +33,15 @@ page {
   color: #333333;
   margin: 30rpx 0;
 }
+.flex-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 70rpx;
+}
+.flex {
+}
 .btn {
-  margin: 70rpx auto 0;
-  width: 50%;
+  width: 220rpx;
   height: 80rpx;
   background: #FFFFFF;
   color: #666666;

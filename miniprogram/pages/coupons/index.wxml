@@ -1,0 +1,17 @@
+<view>
+  <view class="tabs-list">
+    <view
+      wx:for="{{tabs}}"
+      class="tabs-item {{currentIndex == item.value ? 'active' : ''}}"
+      bindtap="changeTabs"
+      data-index="item.value"
+      wx:key="index">
+      <span>{{item.label}}</span>
+    </view>
+  </view>
+    <!-- {
+      this.state.status_list.length ? (
+        <view class="tabs-ink-bar" style={{left: "calc(" + (100 / this.state.status_list.length * (this.state.active_status + 0.5)) + "%  - 12rpx)"}}></view>
+      ) : null
+    } -->
+</view>

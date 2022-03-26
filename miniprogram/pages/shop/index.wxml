@@ -1,0 +1,27 @@
+<view class="shop-page">
+  <view class="topper">
+    <view class="bottom-box">
+      <view>我的积分</view>
+      <view class="num">{{userInfo.point}}</view>
+      <view class="right-sanjiao"></view>
+    </view>
+  </view>
+
+  <view class="exchange-content">
+    <view class="exchange-title">
+      <span>兑好物</span>
+    </view>
+    <view class="points-list">
+      <view wx:for="{{coupons}}" 
+        class="points-item box-shadow" 
+        wx:key="index" data-index='{{index}}' bindtap="addOrder">
+        <image class="goods-image" src="{{item.img}}" mode="aspectFill" />
+        <view class="goods-name">{{item.name}}</view>
+        <view class="goods-price">
+          <span>￥{{item.price}}</span>
+        </view>
+        <view class="buy-btn">兑换购买</view>
+      </view>
+    </view>
+  </view>
+</view>

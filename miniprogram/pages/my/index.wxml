@@ -33,27 +33,49 @@
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>
-    <view class="menu-item" bindtap="goToBalance">
+
+    <button 
+      open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
+      bindgetphonenumber="getPhoneNumber" 
+      class="default-btn menu-item" 
+      style="width: 100%;" 
+      bindtap="goToBalance"
+    >
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/ef041d49-16f1-4ffa-a11d-f04f5b3faae21190838642x.png"></image>
         <text>充值有礼</text>
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
-    </view>
-    <view class="menu-item" bindtap="goToPoint">
+    </button>
+
+    <button 
+      open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
+      bindgetphonenumber="getPhoneNumber" 
+      class="default-btn menu-item" 
+      style="width: 100%;" 
+      bindtap="goToCoupons"
+    >
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/f43a3a54-e13e-407b-9ccc-a802649589f1b720aa1dcce.png"></image>
         <text>优惠券</text>
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
-    </view>
-    <view class="menu-item" bindtap="goToPoint">
+    </button>
+    
+    <button 
+      open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
+      bindgetphonenumber="getPhoneNumber" 
+      class="default-btn menu-item" 
+      style="width: 100%;" 
+      bindtap="goToPoint"
+    >
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/afad56be-b0e0-4856-98a0-cf752ced4cda46662917315.svg"></image>
-        <text>积分商城</text>
+        <text>商城</text>
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
-    </view>
+    </button>
+    
     <button style="width: 100%" open-type="contact" class="default-btn menu-item">
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/e35342a7-0543-459a-9464-996eb0a76bed46662118701.svg"></image>
