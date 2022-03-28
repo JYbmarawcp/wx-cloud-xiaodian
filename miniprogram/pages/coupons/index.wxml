@@ -4,14 +4,30 @@
       wx:for="{{tabs}}"
       class="tabs-item {{currentIndex == item.value ? 'active' : ''}}"
       bindtap="changeTabs"
-      data-index="item.value"
+      data-index="{{item.value}}"
       wx:key="index">
       <span>{{item.label}}</span>
     </view>
   </view>
-    <!-- {
-      this.state.status_list.length ? (
-        <view class="tabs-ink-bar" style={{left: "calc(" + (100 / this.state.status_list.length * (this.state.active_status + 0.5)) + "%  - 12rpx)"}}></view>
-      ) : null
-    } -->
+  <view class="tabs-ink-bar" 
+    style="left: calc({{100 / 3 * (currentIndex + 0.5)}}% - 12rpx)"></view>
+
+  <view wx:for="{{couponsList}}" wx:key="index" class="coupon-item">
+    <div class="left-content">
+        <span class="coupon-amount">{{item.discount_amount}}</span>
+        <span class="coupon-limit">无门槛</span>
+    </div>
+    <div class="center-content">
+      <span class="coupon-name">{{item.name}}</span>
+      <span class="coupon-type">
+        打本专用
+      </span>
+      <span class="date">{{item.startTime + "-" + item.endTime}}</span>
+    </div>
+    <div class="btn-content">
+      <div class="btn" onTap="goToUseCoupon">
+        <span>立即使用</span>
+      </div>
+    </div>
+  </view>
 </view>
