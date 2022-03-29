@@ -75,6 +75,7 @@ Page({
             status: 0, //未使用状态
             _createTime: +new Date(),
             _updateTime: +new Date(),
+            endTime: +new Date() + 31536000000
           }
         }).then(res => {
           wx.cloud.database().collection('user_coupons').add({
@@ -85,6 +86,7 @@ Page({
               status: 0, //未使用状态
               _createTime: +new Date(),
               _updateTime: +new Date(),
+              endTime: +new Date() + 31536000000
             }
           }).then(res => {
             wx.cloud.database().collection('user_coupons').add({
@@ -95,6 +97,7 @@ Page({
                 status: 0, //未使用状态
                 _createTime: +new Date(),
                 _updateTime: +new Date(),
+                endTime: +new Date() + 31536000000
               }
             }).then(res => {
               wx.cloud.database().collection('user_coupons').add({
@@ -105,6 +108,7 @@ Page({
                   status: 0, //未使用状态
                   _createTime: +new Date(),
                   _updateTime: +new Date(),
+                  endTime: +new Date() + 31536000000
                 }
               }).then(res => {
                 wx.cloud.database().collection('shop_orders').doc(that.data.order_id).update({
