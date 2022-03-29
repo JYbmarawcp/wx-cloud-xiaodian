@@ -70,7 +70,7 @@ Page({
         wx.cloud.database().collection('user_coupons').add({
           data: {
             orderId: that.data.order_id,
-            name: that.data.coupons[index].name,
+            name: that.data.coupons[index].ez_name,
             coupon_id: that.data.coupons[index]._id,
             status: 0, //未使用状态
             _createTime: +new Date(),
@@ -81,7 +81,7 @@ Page({
           wx.cloud.database().collection('user_coupons').add({
             data: {
               orderId: that.data.order_id,
-              name: that.data.coupons[index].name,
+              name: that.data.coupons[index].ez_name,
               coupon_id: that.data.coupons[index]._id,
               status: 0, //未使用状态
               _createTime: +new Date(),
@@ -92,7 +92,7 @@ Page({
             wx.cloud.database().collection('user_coupons').add({
               data: {
                 orderId: that.data.order_id,
-                name: that.data.coupons[index].name,
+                name: that.data.coupons[index].ez_name,
                 coupon_id: that.data.coupons[index]._id,
                 status: 0, //未使用状态
                 _createTime: +new Date(),
@@ -103,7 +103,7 @@ Page({
               wx.cloud.database().collection('user_coupons').add({
                 data: {
                   orderId: that.data.order_id,
-                  name: that.data.coupons[index].name,
+                  name: that.data.coupons[index].ez_name,
                   coupon_id: that.data.coupons[index]._id,
                   status: 0, //未使用状态
                   _createTime: +new Date(),

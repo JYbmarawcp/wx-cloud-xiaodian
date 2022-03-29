@@ -16,7 +16,21 @@
   </view>
   <view class="item-wrap">
     <text>优惠券</text>
-    <view>暂无可用优惠券</view>
+    <picker wx:if="{{couponsList.length && isShow}}" 
+      bindchange="bindPickerChange" 
+      value="{{index}}"
+      range-key="name"
+      range="{{couponsList}}"
+    >
+      <view wx:if="{{selectCoupon}}">
+        {{selectCoupon}}
+      </view>
+      <view wx:else class="picker">
+        <text>请选择</text>
+        <image class="icon-arrow" src="../../images/arrow.svg" />
+      </view>
+    </picker>
+    <view class="picker" wx:else>暂无可用优惠券</view>
   </view>
   <view class="item-wrap">
     <view bindtap="goToBalance">我的余额（￥{{userInfo.balance || 0}}）</view>
