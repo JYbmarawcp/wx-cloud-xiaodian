@@ -5,10 +5,31 @@ Page({
     price: null,
     realAmount: 0,
     useBalance: 0,
+    useCoupon: 0,
     userInfo: {},
+    couponsList: [],
+    isShow: false,
+    index: 0,
+    selectCoupon: "",
   },
   onLoad: function (options) {
-    this.getUser()
+    wx.showLoading({
+      title: '加载中~',
+    })
+    this.getUser();
+    wx.cloud.callFunction({
+      name: 'find_coupons',
+      data: {
+        status: 0
+      }
+    }).then(res => {
+      const couponsList = res.result.list;
+      this.setData({
+        couponsList,
+        isShow: false
+      })
+      wx.hideLoading();
+    })
   },
   getUser() {
     wx.cloud.database().collection('users').where({
@@ -45,7 +66,11 @@ Page({
       })
     }
     this.setData({
-      switch1Checked: !this.data.switch1Checked
+      switch1Checked: !this.data.switch1Checked,
+      isShow: this.data.switch1Checked ? true : false,
+      index: 0,
+      selectCoupon: "",
+      useCoupon: 0
     })
   },
   changeInput(e) {
@@ -55,23 +80,36 @@ Page({
         this.setData({
           price,
           realAmount: 0,
-          useBalance: price
+          useBalance: price,
+          isShow: false
         })
       } else {
         const realAmount = ((price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
         this.setData({
           price,
           realAmount,
-          useBalance: this.data.userInfo.balance
+          useBalance: this.data.userInfo.balance,
+          isShow: false
         })
       }
     } else {
       this.setData({
         price,
         realAmount: price,
-        useBalance: 0
+        useBalance: 0,
+        isShow: price >= 100 ? true :false
       })
     }
+  },
+  bindPickerChange: function(e) {
+    const discount = this.data.couponsList[e.detail.value].couponRes[0].discount;
+    const realAmount = ((this.data.price * 100 - discount * 100 ) / 100).toFixed(2)
+    this.setData({
+      index: e.detail.value,
+      selectCoupon: this.data.couponsList[e.detail.value].name,
+      useCoupon: discount,
+      realAmount
+    })
   },
   addOrder() {
     if (!this.data.price) {
@@ -151,6 +189,16 @@ Page({
     wx.requestPayment({
       ...payment,
       success() {
+        // 优惠券处理
+        if (that.data.useCoupon) {
+          wx.cloud.database().collection('user_coupons').doc(that.data.couponsList[that.data.index]._id).update({
+            data: {
+              status: 1,
+              _updateTime: +new Date(),
+            }
+          })
+        }
+
         wx.cloud.database().collection('account').add({
           data: {
             amount: that.data.useBalance,
@@ -169,6 +217,7 @@ Page({
           data: {
             status: 1,
             useBalance: that.data.useBalance,
+            useCoupon: that.data.useCoupon ? that.data.couponsList[that.data.index]._id : "",
             _updateTime: +new Date(),
           },
           success() {

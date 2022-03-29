@@ -71,6 +71,12 @@
           "pathName": "pages/index/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/paySuccess/index",
+          "pathName": "pages/paySuccess/index",
+          "query": "orderId=807102f6623edfa901fc29fe27a96fef",
+          "scene": null
         }
       ]
     }

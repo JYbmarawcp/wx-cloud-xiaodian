@@ -17,7 +17,10 @@
     "pages/buy/index",
     "pages/balance/index",
     "pages/my/index",
-    "pages/paySuccess/index"
+    "pages/paySuccess/index",
+    "pages/coupons/index",
+    "pages/couponDetail/index",
+    "pages/shop/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

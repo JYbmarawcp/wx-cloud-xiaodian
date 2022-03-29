@@ -117,10 +117,18 @@ Page({
       })
     }
   },
+  goToCoupons() {
+    if (this.data.userInfo.phoneNumber) {
+      wx.navigateTo({
+        url: '/pages/coupons/index',
+      })
+    }
+  },
   goToPoint() {
-    wx.showToast({
-      icon: "none",
-      title: '暂未开放',
-    })
+    if (this.data.userInfo.phoneNumber) {
+      wx.navigateTo({
+        url: '/pages/shop/index',
+      })
+    }
   }
 })

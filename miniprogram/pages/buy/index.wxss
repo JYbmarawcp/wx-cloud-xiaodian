@@ -64,3 +64,13 @@ page {
   color: #FFFFFF;
   font-size: 30rpx;
 }
+.picker {
+  display: flex;
+  align-items: center;
+  color: #828282;
+}
+.icon-arrow {
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 6rpx;
+}

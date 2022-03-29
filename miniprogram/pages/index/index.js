@@ -112,7 +112,10 @@ Page({
     const key = e.detail.value.trim()
     if (key) {
       wx.cloud.database().collection('drama').where({
-        title: e.detail.value
+        title: wx.cloud.database().RegExp({
+          regexp: key,
+          options: 'i',
+        })
       }).get().then(res => {
         this.setData({
           dramaList: res.data

@@ -8,7 +8,13 @@
   <view class="fs-s">
     支付时间: {{time}}
   </view>
-  <view class="flex">
-    <navigator hover-class="none" open-type="switchTab" url="/pages/index/index" class="btn">回到首页</navigator>
+
+  <view class="flex-wrap">
+    <view class="flex">
+     <view bindtap="goToCoupons" class="btn">查看优惠券</view>
+    </view>
+    <view class="flex">
+      <navigator hover-class="none" open-type="switchTab" url="/pages/index/index" class="btn">回到首页</navigator>
+    </view>
   </view>
 </view>

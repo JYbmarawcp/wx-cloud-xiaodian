@@ -1,0 +1,45 @@
+<view>
+  <view class="tabs-list">
+    <view
+      wx:for="{{tabs}}"
+      class="tabs-item {{currentIndex == item.value ? 'active' : ''}}"
+      bindtap="changeTabs"
+      data-index="{{item.value}}"
+      wx:key="index">
+      <text>{{item.label}}</text>
+    </view>
+  </view>
+  <view class="tabs-ink-bar" 
+    style="left: calc({{100 / 3 * (currentIndex + 0.5)}}% - 12rpx)"></view>
+
+  <view 
+    wx:for="{{couponsList}}" 
+    wx:key="index" 
+    class="coupon-info {{item.status !== 0 ? 'opacity' : ''}}"
+  >
+    <view class="coupon-item">
+      <div class="top-content">
+        <div class="left-content">
+          <text class="coupon-amount">{{item.couponRes[0].discount}}</text>
+          <text class="coupon-limit">满100可用</text>
+        </div>
+        <div class="center-content">
+          <text class="coupon-name">{{item.couponRes[0].ez_name}}</text>
+          <text class="coupon-type">
+            打本专用券
+          </text>
+          <text class="date">{{item.startTime + "至" + item.endTime}}</text>
+        </div>
+        <div class="btn-content">
+          <div wx:if="{{item.status === 0}}" class="btn" bindtap="goToUseCoupon">
+            <text>立即使用</text>
+          </div>
+          <image wx:if="{{item.status === 1}}" class="icon-use" src="https://udh.oss-cn-hangzhou.aliyuncs.com/5a6ed8fe-ce7c-41d9-907e-b1dafb5529fa48538626107.svg" />
+          <image wx:if="{{item.status === 2}}" class="icon-use" src="https://udh.oss-cn-hangzhou.aliyuncs.com/d53d3977-7574-45f9-b9d2-341280c172d348538767477.svg" />
+        </div>
+      </div>
+
+    </view>
+  </view>
+
+</view>
