@@ -25,7 +25,17 @@ Page({
       wx.hideLoading()
     })
   },
+  previewImage(event) {
+    console.log(event.currentTarget.dataset.img);
+    wx.previewImage({
+      current: event.currentTarget.dataset.img, // 当前显示图片的http链接
+      urls: [event.currentTarget.dataset.img] // 需要预览的图片http链接列表
+    })
+  },
   addOrder(event) {
+    wx.showLoading({
+      title: '加载中~',
+    })
     let index = event.currentTarget.dataset.index;
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
     const price = this.data.coupons[index].price;

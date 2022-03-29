@@ -14,13 +14,14 @@
     <view class="points-list">
       <view wx:for="{{coupons}}" 
         class="points-item box-shadow" 
-        wx:key="index" data-index='{{index}}' bindtap="addOrder">
-        <image class="goods-image" src="{{item.img}}" mode="aspectFill" />
+        wx:key="index"
+      >
+        <image data-img='{{item.url}}' bindtap="previewImage" class="goods-image" src="{{item.img}}" mode="aspectFill" />
         <view class="goods-name">{{item.name}}</view>
         <view class="goods-price">
           <span>￥{{item.price}}</span>
         </view>
-        <view class="buy-btn">兑换购买</view>
+        <view data-index='{{index}}' bindtap="addOrder" class="buy-btn">兑换购买</view>
       </view>
     </view>
   </view>

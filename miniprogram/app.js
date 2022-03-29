@@ -10,7 +10,7 @@ App({
         //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
-        env: 'jubensha-3grk07ua57c738f5',
+        env: 'yzjs-6gsqlx7v8a6f5ee4',
         traceUser: true,
       });
     }
@@ -37,7 +37,7 @@ App({
     wx.cloud.callFunction({
       name: 'quickstartFunctions',
       config: {
-        env: 'jubensha-3grk07ua57c738f5'
+        env: 'yzjs-6gsqlx7v8a6f5ee4'
       },
       data: {
         type: 'getOpenId'

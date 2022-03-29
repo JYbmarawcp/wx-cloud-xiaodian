@@ -122,7 +122,7 @@ Page({
         })
       })
     } else {
-      wx.cloud.database().collection('drama').get().then(res => {
+      wx.cloud.database().collection('drama').orderBy('_updateTime', 'desc').get().then(res => {
         this.setData({
           dramaList: res.data
         })

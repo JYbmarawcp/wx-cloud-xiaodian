@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
     "spbillCreateIp" : "127.0.0.1",
     "subMchId" : "1622859044", // 商户号
     "totalFee" : event.totalFee, // 订单金额
-    "envId": "jubensha-3grk07ua57c738f5", 
+    "envId": "yzjs-6gsqlx7v8a6f5ee4", 
     "functionName": "pay_cb"
   })
   return res
