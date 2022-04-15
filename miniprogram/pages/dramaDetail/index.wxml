@@ -1,0 +1,34 @@
+<view class="drama-detail">
+  <view class="bg">
+    <image class="bg-img" src="{{dramaDetail.cover}}"></image>
+  </view>
+  <view class="top-drama">
+    <image class="drama-img" mode="widthFix" src="{{dramaDetail.cover}}" />
+    <view class="drama-info">
+      <view class="drama-name">{{dramaDetail.title}}（{{dramaDetail.level}}）</view>
+      <view class="drama-person">人数：{{dramaDetail.person}}</view>
+      <view>价格：{{dramaDetail.price}}元/位</view>
+      <view class="type-drama">
+        <view class="text-drama">类型：</view>
+        <view style="flex: 1;"><text wx:for="{{dramaDetail.types}}" class="item-type">{{item}}</text></view>
+      </view>
+      <view>发行：{{dramaDetail.publisher}}</view>
+    </view>
+  </view>
+
+  <button style="width: 94%" open-type="contact" class="default-btn contact-btn">
+    <text>预约该剧本</text>
+  </button>
+
+  <view class="content-drama">
+    <view class="mb32">简介</view>
+    <rich-text nodes="{{dramaDetail.detail}}"></rich-text>
+  </view>
+
+  <view class="content-drama" wx:if="{{dramaDetail.role}}">
+    <view class="mb32">剧本角色</view>
+    <scroll-view scroll-x="true" class="scroll-role">
+      <block wx:for="{{dramaDetail.role}}"><image bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" /></block>
+    </scroll-view>
+  </view>
+</view>

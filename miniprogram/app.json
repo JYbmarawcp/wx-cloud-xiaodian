@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/dramaDetail/index",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
     "pages/deployService/index",

@@ -15,7 +15,7 @@
     </view>
   </view>
   <view class="drama-list">
-    <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index">
+    <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index" data-id="{{item._id}}" bindtap="goToDetail">
       <view class="bg">
         <image class="bg-img" src="{{item.cover}}"></image>
       </view>
