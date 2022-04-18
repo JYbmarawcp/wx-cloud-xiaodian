@@ -11,8 +11,14 @@ Page({
     isShow: false,
     index: 0,
     selectCoupon: "",
+    drama: ""
   },
   onLoad: function (options) {
+    if (options.drama) {
+      this.setData({
+        drama: options.drama
+      })
+    }
     wx.showLoading({
       title: '加载中~',
     })
@@ -27,6 +33,14 @@ Page({
       this.setData({
         couponsList,
         isShow: false
+      }, () => {
+        if (options.price) {
+          this.changeInput({
+            detail: {
+              value: options.price
+            }
+          })
+        }
       })
       wx.hideLoading();
     })
@@ -127,6 +141,8 @@ Page({
     const price = this.data.realAmount ? Number(this.data.realAmount) : 0;
     wx.cloud.database().collection('orders').add({
       data: {
+        drama: this.data.drama,
+        nickName: this.data.userInfo.nickName,
         orderId,
         goodMoney: price,
         status: 0, //未支付状态

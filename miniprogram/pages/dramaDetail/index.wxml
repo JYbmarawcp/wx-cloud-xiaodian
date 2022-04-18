@@ -10,14 +10,17 @@
       <view>价格：{{dramaDetail.price}}元/位</view>
       <view class="type-drama">
         <view class="text-drama">类型：</view>
-        <view style="flex: 1;"><text wx:for="{{dramaDetail.types}}" class="item-type">{{item}}</text></view>
+        <view style="flex: 1;"><text wx:for="{{dramaDetail.types}}" wx:key="index" class="item-type">{{item}}</text></view>
       </view>
       <view>发行：{{dramaDetail.publisher}}</view>
     </view>
   </view>
 
-  <button style="width: 94%" open-type="contact" class="default-btn contact-btn">
-    <text>预约该剧本</text>
+  <button
+    open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
+    bindgetphonenumber="getPhoneNumber" 
+    style="width: 94%" class="default-btn pay-btn" bindtap="goToPay">
+    <text>结账</text>
   </button>
 
   <view class="content-drama">
@@ -31,4 +34,9 @@
       <block wx:for="{{dramaDetail.role}}"><image bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" /></block>
     </scroll-view>
   </view>
+
+  <button style="width: 96rpx" open-type="contact" class="default-btn contact-btn">
+    <image class="contact-icon" src="https://udh.oss-cn-hangzhou.aliyuncs.com/e35342a7-0543-459a-9464-996eb0a76bed46662118701.svg" />
+    <view>预约</view>
+  </button>
 </view>
