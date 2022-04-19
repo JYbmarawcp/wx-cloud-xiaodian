@@ -26,7 +26,6 @@ Page({
     })
   },
   previewImage(event) {
-    console.log(event.currentTarget.dataset.img);
     wx.previewImage({
       current: event.currentTarget.dataset.img, // 当前显示图片的http链接
       urls: [event.currentTarget.dataset.img] // 需要预览的图片http链接列表

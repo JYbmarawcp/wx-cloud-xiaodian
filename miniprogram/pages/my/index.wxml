@@ -83,5 +83,13 @@
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>
+
+    <button style="width: 100%" class="default-btn menu-item" bindtap="goToWifi">
+      <view class="flex-left">
+        <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/28c6735e-c112-4cc6-b448-4dc155a297303044701363x.png"></image>
+        <text>连接店铺wifi</text>
+      </view>
+      <image class="icon-arrow" src="../../images/arrow.svg"></image>
+    </button>
   </view>
 </view>

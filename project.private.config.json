@@ -67,6 +67,13 @@
           "pathName": "pages/paySuccess/index",
           "query": "orderId=807102f6623edfa901fc29fe27a96fef",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/connectWifi/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

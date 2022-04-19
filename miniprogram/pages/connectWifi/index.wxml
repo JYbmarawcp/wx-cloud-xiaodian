@@ -1,0 +1,2 @@
+<!--pages/connectWifi/index.wxml-->
+<button bindtap="connectWifi" type="primary">一键连接wifi</button>
