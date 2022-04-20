@@ -1,0 +1,118 @@
+
+page {
+  background-color: rgba(112, 112, 112, 0.4);
+}
+.drama-detail {
+  padding: 32rpx 0 60rpx;
+  color: #fdfdfd;
+}
+
+.drama-detail .bg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+}
+.drama-detail .bg-img {
+  transform: scale(6, 8);
+  filter: blur(50rpx);
+}
+
+.top-drama {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  padding: 0 24rpx;
+}
+
+.drama-img {
+  width: 234rpx;
+  margin-right: 24rpx;
+  border-radius: 8rpx;
+}
+.drama-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24rpx;
+  padding: 12rpx 0;
+}
+
+.drama-name {
+  font-size: 32rpx;
+}
+.drama-person {
+  font-size: 28rpx;
+}
+.type-drama {
+  display: flex;
+}
+.item-type {
+  display: inline-block;
+  padding: 0 12rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  background-color: #372929;
+  border-radius: 16rpx;
+  margin-right: 8rpx;
+  margin-bottom: 8rpx;
+}
+
+.pay-btn {
+  margin: 32rpx 24rpx;
+  background-color: #372929;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fdfdfd;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+}
+
+.content-drama {
+  position: relative;
+  z-index: 1;
+  padding: 0 24rpx;
+  margin-bottom: 48rpx;
+}
+
+.mb32 {
+  margin-bottom: 32rpx;
+}
+.scroll-role {
+  width: 100%;
+  white-space: nowrap;
+}
+.role-drama {
+  width: 200rpx;
+  margin-right: 12rpx;
+  border-radius: 8rpx;
+}
+
+.contact-btn {
+  position: fixed;
+  right: 24rpx;
+  bottom: 12%;
+  padding: 24rpx;
+  background-color: rgba(112, 112, 112, 0.4);
+  border-radius: 52rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fdfdfd;
+  font-weight: 400;
+  z-index: 9;
+}
+
+.contact-btn .contact-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-bottom: 8rpx;
+}

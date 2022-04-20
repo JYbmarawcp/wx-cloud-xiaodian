@@ -128,5 +128,10 @@ Page({
         })
       })
     }
+  },
+  goToDetail(e) {
+    wx.navigateTo({
+      url: '/pages/dramaDetail/index?id=' + e.currentTarget.dataset.id,
+    })
   }
 });

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/dramaDetail/index",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
     "pages/deployService/index",
@@ -20,7 +21,10 @@
     "pages/paySuccess/index",
     "pages/coupons/index",
     "pages/couponDetail/index",
-    "pages/shop/index"
+    "pages/shop/index",
+    "pages/connectWifi/index",
+    "pages/question/index",
+    "pages/answer/answer"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

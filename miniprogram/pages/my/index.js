@@ -130,5 +130,15 @@ Page({
         url: '/pages/shop/index',
       })
     }
+  },
+  goToWifi() {
+    wx.navigateTo({
+      url: '/pages/connectWifi/index',
+    })
+  },
+  goToBook() {
+    wx.navigateTo({
+      url: '/pages/question/index',
+    })
   }
 })
