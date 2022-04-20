@@ -1,2 +1,15 @@
-<!--pages/connectWifi/index.wxml-->
-<button bindtap="connectWifi" type="primary">一键连接wifi</button>
+<view class="wifi-page">
+  <view wx:if="{{isShow === 2}}" class="text-success text text-top animate__animated animate__zoomInDown">
+    wifi连接失败
+  </view>
+  <view wx:elif="{{isShow === 1}}" class="text-success text text-top animate__animated animate__zoomInDown">
+    欢迎来到影子剧社
+  </view>
+  <view wx:else class="text-success text text-top animate__animated animate__zoomInDown">
+    wifi连接中...
+  </view>
+  <view class='triangle'>
+    <view class='square' wx:for="{{120}}" wx:key="*this"></view>
+  </view>
+</view>
+

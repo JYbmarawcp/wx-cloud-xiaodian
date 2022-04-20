@@ -22,7 +22,9 @@
     "pages/coupons/index",
     "pages/couponDetail/index",
     "pages/shop/index",
-    "pages/connectWifi/index"
+    "pages/connectWifi/index",
+    "pages/question/index",
+    "pages/answer/answer"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

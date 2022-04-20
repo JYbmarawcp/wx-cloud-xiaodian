@@ -135,5 +135,10 @@ Page({
     wx.navigateTo({
       url: '/pages/connectWifi/index',
     })
+  },
+  goToBook() {
+    wx.navigateTo({
+      url: '/pages/question/index',
+    })
   }
 })

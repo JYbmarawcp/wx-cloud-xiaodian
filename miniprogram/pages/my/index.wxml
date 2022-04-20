@@ -1,6 +1,6 @@
 <view class="my-page">
   <view>
-    <view wx:if="{{userInfo.nickName}}" class="user-wrap">
+    <view wx:if="{{userInfo.nickName}}" class="user-wrap" bindtap="goToBook">
       <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
       <view class="user-info-wrap">
         <view>{{userInfo.nickName}}</view>
@@ -91,5 +91,6 @@
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>
+    
   </view>
 </view>

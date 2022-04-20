@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="answer-wrapper animate__animated animate__fadeInDownBig">{{ answer }}</view>
+  
+  <view class="back-wrapper">
+    <navigator class="back-btn" url="/pages/question/index" open-type="redirect">再试一次</navigator>
+  </view>
+</view>

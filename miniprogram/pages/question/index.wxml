@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container" bindlongpress="longPress">
+
+  <view class="rotate-img-wrapper" animation="{{animation}}">
+    <image class="rotate-img" src="../../static/imgs/rotate.png" mode="widthFix"></image>
+  </view>
+
+  <view class="text text-top animate__animated animate__zoomInDown">
+    心中默念你的问题
+  </view>
+
+  <view class="text text-bot animate__animated animate__zoomInUp">
+    长按屏幕 3 秒后解答
+  </view>
+</view>
