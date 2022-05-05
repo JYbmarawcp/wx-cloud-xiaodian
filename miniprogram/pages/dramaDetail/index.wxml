@@ -3,7 +3,7 @@
     <image class="bg-img" src="{{dramaDetail.cover}}"></image>
   </view>
   <view class="top-drama">
-    <image class="drama-img" mode="widthFix" src="{{dramaDetail.cover}}" />
+    <image class="drama-img" bindtap="previewDrama" mode="widthFix" src="{{dramaDetail.cover}}" />
     <view class="drama-info">
       <view class="drama-name">{{dramaDetail.title}}（{{dramaDetail.level}}）</view>
       <view class="drama-person">人数：{{dramaDetail.person}}</view>
@@ -31,7 +31,7 @@
   <view class="content-drama" wx:if="{{dramaDetail.role}}">
     <view class="mb32">剧本角色</view>
     <scroll-view scroll-x="true" class="scroll-role">
-      <block wx:for="{{dramaDetail.role}}"><image bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" /></block>
+      <block wx:for="{{dramaDetail.role}}" wx:key="index"><image bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" /></block>
     </scroll-view>
   </view>
 

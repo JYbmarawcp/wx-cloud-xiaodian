@@ -2,8 +2,8 @@
 
 .my-page {
   height: 100vh;
-  background: linear-gradient(180deg, #E1E8FF 0%, #F6F7FA 100%);
-  padding: 48rpx 24rpx;
+  background: linear-gradient(180deg, #F6F7FA 0%, #E1E8FF 100%);
+  padding: 12rpx 24rpx;
 }
 .user-wrap {
   display: flex;

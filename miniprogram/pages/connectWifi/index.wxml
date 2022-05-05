@@ -5,9 +5,12 @@
   <view wx:elif="{{isShow === 1}}" class="text-success text text-top animate__animated animate__zoomInDown">
     欢迎来到影子剧社
   </view>
-  <view wx:else class="text-success text text-top animate__animated animate__zoomInDown">
-    wifi连接中...
-  </view>
+  <button wx:elif="{{userInfo.nickName}}" bindtap="connectWifi" type="default" class="text-success text text-top animate__animated animate__zoomInDown">
+    连接WiFi
+  </button>
+  <button wx:else bindtap="getUser" type="default" class="text-success text text-top animate__animated animate__zoomInDown">
+    连接WiFi
+  </button>
   <view class='triangle'>
     <view class='square' wx:for="{{120}}" wx:key="*this"></view>
   </view>
