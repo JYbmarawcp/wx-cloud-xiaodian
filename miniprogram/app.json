@@ -34,6 +34,9 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#bfbed0",
+    "selectedColor": "#F6F6F6",
+    "backgroundColor": "#38364b",
     "list": [{
       "pagePath": "pages/index/index",
       "text": "剧本目录"

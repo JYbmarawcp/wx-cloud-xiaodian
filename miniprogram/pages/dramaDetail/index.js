@@ -25,6 +25,14 @@ Page({
   onShareAppMessage() {
 
   },
+  onShareTimeline() {
+    return {
+      title: '影子剧社剧本推理馆',
+      query: {
+        id: this.data.dramaDetail._id
+      },
+    };
+  },
   getDrama(id) {
     wx.cloud.database().collection('drama').doc(id).get().then(res => {
       this.setData({
@@ -37,6 +45,14 @@ Page({
     wx.previewImage({
       current: this.data.dramaDetail.role[0], // 当前显示图片的http链接
       urls: this.data.dramaDetail.role // 需要预览的图片http链接列表
+    })
+  },
+  previewDrama() {
+    const list = [];
+    list[0] = this.data.dramaDetail.cover
+    wx.previewImage({
+      current: list[0], // 当前显示图片的http链接
+      urls: list // 需要预览的图片http链接列表
     })
   },
   goToPay() {

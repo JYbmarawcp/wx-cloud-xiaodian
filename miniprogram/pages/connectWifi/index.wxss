@@ -6,7 +6,7 @@ page {
 
 .text {
   color: #fff;
-  font-size: 64rpx;
+  font-size: 54rpx;
   text-align: center;
   letter-spacing: 5rpx;
   position: absolute;

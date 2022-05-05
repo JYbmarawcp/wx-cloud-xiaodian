@@ -1,7 +1,7 @@
 /**index.wxss**/
 
 page {
-  background-color: #000000;
+  background-color: #262432;
   font-family: PingFang SC-Medium, PingFang SC;
 }
 .home-page {
@@ -9,7 +9,7 @@ page {
 }
 .tab-wrap {
   padding: 24rpx 36rpx;
-  color: #f3f3f3;
+  color: #bfbed0;
 
 }
 .person-wrap {
@@ -24,12 +24,12 @@ page {
 }
 .active {
   font-weight: bold;
-  background-color: #d4a94b;
-  color: #000000;
+  background-color: #4e3774;
+  color: #f3f3f3;
 }
 .drama-list {
   box-sizing: border-box;
-  background-color: #232323;
+  background-color: #262432;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -77,6 +77,7 @@ page {
 .price {
   display: inline-block;
   margin-right: 30rpx;
+  font-size: 28rpx;
 }
 
 .bg {
@@ -97,7 +98,7 @@ page {
 .search-wrap {
   height: 110rpx;
   box-sizing: border-box;
-  background-color: #232323;
+  background-color: #262432;
   width: 100%;
   padding: 24rpx 24rpx 12rpx;
 }
