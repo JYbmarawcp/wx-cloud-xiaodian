@@ -50,7 +50,7 @@ Page({
       _openid: app.globalData.openid
     }).get().then(res => {
       this.setData({
-        userInfo: res.data[0]
+        userInfo: res.data[0] || {}
       })
     })
   },
@@ -215,12 +215,15 @@ Page({
           })
         }
 
-        wx.cloud.database().collection('account').add({
-          data: {
-            amount: that.data.useBalance,
-            type: "reduce"
-          }
-        })
+        if (that.data.useBalance) {
+          wx.cloud.database().collection('account').add({
+            data: {
+              amount: that.data.useBalance,
+              type: "reduce"
+            }
+          })
+        }
+
         wx.cloud.callFunction({
           name: 'update_balance',
           data: {

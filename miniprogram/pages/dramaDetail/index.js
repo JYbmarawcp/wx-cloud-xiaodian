@@ -2,6 +2,7 @@
 const app = getApp()
 Page({
   data: {
+    load_img: false,
     dramaDetail: {},
     userInfo: {}
   },
@@ -32,6 +33,11 @@ Page({
         id: this.data.dramaDetail._id
       },
     };
+  },
+  loadImg() {
+    this.setData({
+      load_img: true
+    })
   },
   getDrama(id) {
     wx.cloud.database().collection('drama').doc(id).get().then(res => {

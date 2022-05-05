@@ -31,7 +31,9 @@
   <view class="content-drama" wx:if="{{dramaDetail.role}}">
     <view class="mb32">剧本角色</view>
     <scroll-view scroll-x="true" class="scroll-role">
-      <block wx:for="{{dramaDetail.role}}" wx:key="index"><image bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" /></block>
+      <block wx:for="{{dramaDetail.role}}" wx:key="index">
+        <image wx:if="load_img" bindload="loadImg" bindtap="previewImage" class="role-drama" mode="widthFix" src="{{item}}" />
+      </block>
     </scroll-view>
   </view>
 

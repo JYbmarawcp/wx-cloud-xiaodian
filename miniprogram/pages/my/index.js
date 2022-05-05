@@ -137,8 +137,8 @@ Page({
     })
   },
   goToBook() {
-    wx.navigateTo({
-      url: '/pages/question/index',
-    })
+    // wx.navigateTo({
+    //   url: '/pages/question/index',
+    // })
   }
 })
