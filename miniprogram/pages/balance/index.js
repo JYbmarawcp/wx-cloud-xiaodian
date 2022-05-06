@@ -87,7 +87,7 @@ Page({
       _openid: app.globalData.openid
     }).get().then(res => {
       this.setData({
-        userInfo: res.data[0]
+        userInfo: res.data[0] || {}
       })
     })
   }

@@ -138,3 +138,8 @@
 .opacity {
   opacity: 0.5;
 }
+.coupon-tip {
+  padding: 12rpx;
+  font-size: 24rpx;
+  color: #c7311d;
+}

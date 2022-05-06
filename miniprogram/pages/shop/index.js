@@ -9,7 +9,9 @@ Page({
     wx.showLoading({
       title: '加载中~',
     })
-    wx.cloud.database().collection('coupons').get().then(res => {
+    wx.cloud.database().collection('coupons').where({
+      types: 1
+    }).get().then(res => {
       this.setData({
         coupons: res.data
       })

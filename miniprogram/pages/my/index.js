@@ -5,21 +5,18 @@ Page({
     userInfo: {}
   },
   onLoad: function () {
-    // wx.cloud.database().collection('users').where({
-    //   _openid: app.globalData.openid
-    // }).get().then(res => {
-    //   this.setData({
-    //     userInfo: res.data[0]
-    //   })
-    // })
   },
   onShow: function () {
+    wx.showLoading({
+      title: '加载中~',
+    })
     wx.cloud.database().collection('users').where({
       _openid: app.globalData.openid
     }).get().then(res => {
       this.setData({
         userInfo: res.data[0] || {}
       })
+      wx.hideLoading()
     })
   },
   getUser() {
