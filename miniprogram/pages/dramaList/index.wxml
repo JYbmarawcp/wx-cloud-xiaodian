@@ -1,5 +1,5 @@
 <!--pages/dramaList/index.wxml-->
-<view class="home-page">
+<view class="dramaList-page">
   <view class="tab-wrap">
     <view class="person-wrap">
       <block wx:for="{{personTab}}" wx:key="index">

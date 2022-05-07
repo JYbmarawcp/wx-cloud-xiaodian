@@ -40,7 +40,7 @@
     "backgroundColor": "#38364b",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "剧本目录"
+      "text": "影子剧社"
     },{
       "pagePath": "pages/dramaList/index",
       "text": "剧本目录"
