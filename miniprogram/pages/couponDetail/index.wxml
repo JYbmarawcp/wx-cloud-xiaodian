@@ -1,2 +1,42 @@
-<!--pages/couponDetail/index.wxml-->
-<text>pages/couponDetail/index.wxml</text>
+<view class="coupon-detail">
+  <view class="main-content">
+    <view class="user-avatar">
+      <image src="https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg" 
+      alt="logo" class="image" mode="widthFix" />
+    </view>
+    <view class="mini-app-name">影子剧社</view>
+    <view class="coupon-name">{{couponInfo.name}}</view>
+    <view class="coupon-info">
+      <view class="top-content">
+        <text class="coupon-amount">{{couponInfo.discount}}</text>
+        <view class="right-content">
+          <text>优惠券</text>
+            <text class="coupon-limit">满100元可用</text>
+        </view>
+      </view>
+      <view class="bottom-content">
+        打本专用券
+      </view>
+    </view>
+    <view class="coupon-date">
+      <text>*不与其他活动叠加</text>
+    </view>
+    <view class="coupon-date">
+      <text>有效期：领取后30天内有效</text>
+    </view>
+
+    <view wx:if="{{isReceived}}" class="use-btn" bindtap="goToHome">
+      <text>立即使用</text>
+    </view>
+    <button
+      wx:else
+      open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
+      bindgetphonenumber="getPhoneNumber" 
+      bindtap="receiveCoupon"
+      hover-class="none"
+      class="default-btn use-btn"
+    >
+      <text>点击领取</text>
+    </button>
+  </view>
+</view>

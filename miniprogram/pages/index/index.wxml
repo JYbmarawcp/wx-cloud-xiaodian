@@ -1,40 +1,42 @@
 <!--index.wxml-->
 <view class="home-page">
-  <view class="tab-wrap">
-    <view class="person-wrap">
-      <block wx:for="{{personTab}}" wx:key="index">
-        <view wx:if="{{item>0}}" bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">{{item}}人</view>
-        <view wx:else bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">全部</view>
-      </block>
-    </view>
-  </view>
-  <view class="search-wrap">
-    <view class="search-box">
-      <image class="icon-search" src="https://udh.oss-cn-hangzhou.aliyuncs.com/bfcae5a6-e5f0-4f06-b538-5552f9406c9883640299918.svg"></image>
-      <input value="{{key}}" class="search-input" bindinput="changeInput" placeholder="请输入剧本名" placeholder-class="placeholderColor" bindconfirm="search"  />
-    </view>
-  </view>
-  <view class="drama-list">
-    <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index" data-id="{{item._id}}" bindtap="goToDetail">
-      <view class="bg">
-        <image class="bg-img" src="{{item.cover}}"></image>
+  <image class="bg-top" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/647b9a10-0fbf-491b-860f-f74db3879fe013011667ddd.png" />
+  <view class="home-content">
+    <image class="shop-logo" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg" />
+    <view class="shop-title">
+      <view class="wifi-wrap">
+        <image class="wifi-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/264d1859-83c8-4415-b0a1-86f5f59bbf63620687phone.svg" />
       </view>
-      <view class="content-box">
-        <view class="top-wrap">难度：{{item.level}}</view>
-        <view class="center-box">
-          <view class="left-box">
-            <block wx:for="{{item.types}}" wx:for-item="ele" wx:key="ele">
-              <view>{{ele}}</view>
-            </block>
-          </view>
-          <image class="img-cover" src="{{item.cover}}"></image>
-        </view>
-        <view class="title">{{item.title}}</view>
-        <view class="botton-wrap">
-          <text class="price">{{item.price}}元/位</text>
-          <text class="btn-box">探索</text>
-        </view>
+      <view class="wifi-wrap">
+        <image class="wifi-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/fa1926ba-2944-42e7-9227-343e9bcdc4cc4191531wifi.svg" />
       </view>
     </view>
+    <view class="shop-name">
+      影子剧社
+    </view>
+    <view class="address-box">
+      <view class="address-wrap">
+        <image src="https://udh.oss-cn-hangzhou.aliyuncs.com/b40c83af-4a42-42f2-af33-be64dd1dd4128013address.svg" class="address-icon" mode="widthFix" />
+      </view>
+      <view class="text-line">浙江省杭州市拱墅区武林路100号(距地铁1/2号线凤起路站C1口步行410m)</view>
+      <image class="arrow-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/459cd0bd-a2b7-42c6-9b90-d76536127f428arrowright.svg" />
+    </view>
+
+    <view class="marquee_container">
+      <view class="marquee_text">欢迎来到影子剧社~</view>
+    </view>
+
+    <view class="botton-line"></view>
+
+    <view class="title">热门剧本</view>
+    <scroll-view enhanced="true" show-scrollbar="false" class="hotServiceList_scroll" scroll-x="true">
+      <view class="hotService_content">
+        <view class="drama-wrap" wx:for="{{dramaList}}" wx:key="index">
+          <image class="drama-img" mode="widthFix" src="{{item.cover}}" />
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="drama-btn" bindtap="goDrama">查看全部剧本</view>
   </view>
 </view>

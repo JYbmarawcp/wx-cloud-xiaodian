@@ -6,126 +6,139 @@ page {
 }
 .home-page {
   min-height: 100vh;
+  color: #F6F6F6;
 }
-.tab-wrap {
-  padding: 24rpx 36rpx;
-  color: #bfbed0;
 
-}
-.person-wrap {
-  display: flex;
-  justify-content: flex-start;
-}
-.tab-item {
-  margin-right: 20rpx;
-  font-size: 26rpx;
-  padding: 4rpx 10rpx;
-  border-radius: 10rpx;
-}
-.active {
-  font-weight: bold;
-  background-color: #4e3774;
-  color: #f3f3f3;
-}
-.drama-list {
-  box-sizing: border-box;
-  background-color: #262432;
+.bg-top {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 24rpx;
-  justify-content: space-between;
 }
-.item-wrap {
+.home-content {
   position: relative;
-  width: 300rpx;
-  height: 480rpx;
-  /* background-color: #636363; */
-  border-radius: 8rpx;
-  margin-bottom: 24rpx;
-  padding: 24rpx 20rpx 36rpx;
-  color: #fdfdfd;
-  overflow: hidden;
-}
-.top-wrap {
-  margin-bottom: 16rpx;
-}
-.center-box {
-  display: flex;
-  border-radius: 4rpx;
-  overflow: hidden;
-}
-.left-box {
-  line-height: 44rpx;
-  margin-right: 14rpx;
-}
-.img-cover {
-  width: 234rpx;
-  height: 302rpx;
-}
-.title {
-  text-align: center;
-  margin: 16rpx 0;
-}
-.left-box {
-  flex: 1;
-  font-size: 26rpx;
-}
-.botton-wrap {
-  text-align: center;
-}
-.price {
-  display: inline-block;
-  margin-right: 30rpx;
-  font-size: 28rpx;
-}
-
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(50rpx);
-}
-.bg-img {
-  height: 300%;
-}
-.content-box {
-  position: absolute;
-}
-
-.search-wrap {
-  height: 110rpx;
-  box-sizing: border-box;
   background-color: #262432;
-  width: 100%;
-  padding: 24rpx 24rpx 12rpx;
+  border-radius: 32rpx;
+  margin-top: -50rpx;
+  padding: 48rpx 24rpx 0;
 }
-.search-box {
-  background-color: #6d6d6d;
-  border-radius: 37rpx;
-  height: 100%;
+
+.shop-logo {
+  width: 160rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -50rpx;
+}
+.shop-name {
+  font-size: 46rpx;
+  color: #F6F6F6;
+  margin-bottom: 12rpx;
+}
+.shop-title {
+  display: flex;
+  justify-content: flex-end;
+}
+.wifi-wrap {
+  width: 78rpx;
+  height: 78rpx;
+  background-color: #4f4d5a;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  padding-left: 24rpx;
-  color: #fefefd;
+  justify-content: center;
+  margin-left: 12rpx;
 }
-.icon-search {
-  width: 36rpx;
-  height: 36rpx;
-  margin-right: 18rpx;
+.wifi-icon {
+  width: 38rpx;
 }
-.search-input {
-  flex: 1;
+.address-wrap {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #4f4d5a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10rpx;
+  font-size: 22rpx;
 }
-.placeholderColor {
-  color: #AAAAAA;
+.address-icon {
+  /* width: 20rpx; */
 }
-.btn-box {
+.address-box {
+  display: flex;
+  align-items: center;
+  color: #8d8a9a;
+  margin-bottom: 24rpx;
+}
+.text-line {
   display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.arrow-icon {
+  width: 24rpx;
+}
+@keyframes around {
+  from {
+    margin-left: 100%;
+  }
+  to {
+   /* var接受传入的变量 */
+    margin-left: 0;
+    transform: translateX(-100%);
+  }
+}
+.marquee_container{
+  background-color: #322f42;
+  color:#fff;
+  height: 68rpx;
+  line-height: 68rpx;
+  position: relative;
+  width: 100%;
+  margin-top:0rpx;
+  overflow: hidden;
+  margin-bottom: 60rpx;
+}
+.marquee_text{
   font-size: 24rpx;
-  background-color: #636363;
-  padding: 6rpx 14rpx;
-  border-radius: 8rpx;
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: around;
+  animation-duration: 10s; /*过渡时间*/
+  animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  letter-spacing: 2rpx;
+}
+.botton-line {
+  width: 100%;
+  border-bottom: 2rpx solid #8d8a9a;
+  margin-bottom: 70rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.drama-btn {
+  height: 70rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  background-color: #51505b;
+}
+.hotServiceList_scroll {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.hotService_content {
+  display: flex;
+}
+.drama-wrap {
+  width: 230rpx;
+}
+.drama-img {
+  width: 100%;
 }

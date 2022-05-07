@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/dramaList/index",
     "pages/dramaDetail/index",
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
@@ -39,6 +40,9 @@
     "backgroundColor": "#38364b",
     "list": [{
       "pagePath": "pages/index/index",
+      "text": "影子剧社"
+    },{
+      "pagePath": "pages/dramaList/index",
       "text": "剧本目录"
     },{
       "pagePath": "pages/my/index",

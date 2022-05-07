@@ -17,7 +17,7 @@
     wx:key="index" 
     class="coupon-info {{item.status !== 0 ? 'opacity' : ''}}"
   >
-    <view class="coupon-item">
+    <view class="coupon-item" data-index="{{index}}" bindtap="showTip">
       <div class="top-content">
         <div class="left-content">
           <text class="coupon-amount">{{item.couponRes[0].discount}}</text>
@@ -38,7 +38,9 @@
           <image wx:if="{{item.status === 2}}" class="icon-use" src="https://udh.oss-cn-hangzhou.aliyuncs.com/d53d3977-7574-45f9-b9d2-341280c172d348538767477.svg" />
         </div>
       </div>
-
+    </view>
+    <view class="coupon-tip" wx:if="{{item.show}}">
+      使用规则：一笔订单仅支持使用一张优惠券，优惠券与店内其他营销活动无法叠加使用，具体使用规则可咨询店铺客服。
     </view>
   </view>
 

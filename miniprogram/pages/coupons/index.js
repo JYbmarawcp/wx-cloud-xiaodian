@@ -76,5 +76,13 @@ Page({
     wx.navigateTo({
       url: '/pages/buy/index',
     })
+  },
+  showTip(e) {
+    const couponsList = this.data.couponsList;
+    const index = e.currentTarget.dataset.index;
+    couponsList[index].show = !couponsList[index].show;
+    this.setData({
+      couponsList
+    })
   }
 })

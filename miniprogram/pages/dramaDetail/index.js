@@ -7,14 +7,16 @@ Page({
     userInfo: {}
   },
   onLoad(options) {
-    wx.cloud.database().collection('users').where({
-      _openid: app.globalData.openid
-    }).get().then(res => {
-      this.setData({
-        userInfo: res.data[0] || {}
-      })
-    })
     wx.showLoading();
+    wx.cloud.callFunction({
+      name: 'getUser',
+    }).then(res => {
+      this.setData({
+        userInfo: res.result.userInfo
+      })
+      wx.hideLoading()
+    })
+    
     this.getDrama(options.id);
   },
   onShow() {

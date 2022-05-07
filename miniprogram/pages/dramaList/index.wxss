@@ -1,0 +1,132 @@
+/* pages/dramaList/index.wxss */
+/**index.wxss**/
+
+page {
+  background-color: #262432;
+  font-family: PingFang SC-Medium, PingFang SC;
+}
+.dramaList-page {
+  min-height: 100vh;
+}
+.tab-wrap {
+  padding: 24rpx 36rpx;
+  color: #bfbed0;
+
+}
+.person-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+.tab-item {
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 10rpx;
+}
+.active {
+  font-weight: bold;
+  background-color: #4e3774;
+  color: #f3f3f3;
+}
+.drama-list {
+  box-sizing: border-box;
+  background-color: #262432;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24rpx;
+  justify-content: space-between;
+}
+.item-wrap {
+  position: relative;
+  width: 300rpx;
+  height: 480rpx;
+  /* background-color: #636363; */
+  border-radius: 8rpx;
+  margin-bottom: 24rpx;
+  padding: 24rpx 20rpx 36rpx;
+  color: #fdfdfd;
+  overflow: hidden;
+}
+.top-wrap {
+  margin-bottom: 16rpx;
+}
+.center-box {
+  display: flex;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+.left-box {
+  line-height: 44rpx;
+  margin-right: 14rpx;
+}
+.img-cover {
+  width: 234rpx;
+  height: 302rpx;
+}
+.title {
+  text-align: center;
+  margin: 16rpx 0;
+}
+.left-box {
+  flex: 1;
+  font-size: 26rpx;
+}
+.botton-wrap {
+  text-align: center;
+}
+.price {
+  display: inline-block;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(50rpx);
+}
+.bg-img {
+  height: 300%;
+}
+.content-box {
+  position: absolute;
+}
+
+.search-wrap {
+  height: 110rpx;
+  box-sizing: border-box;
+  background-color: #262432;
+  width: 100%;
+  padding: 24rpx 24rpx 12rpx;
+}
+.search-box {
+  background-color: #6d6d6d;
+  border-radius: 37rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 24rpx;
+  color: #fefefd;
+}
+.icon-search {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 18rpx;
+}
+.search-input {
+  flex: 1;
+}
+.placeholderColor {
+  color: #AAAAAA;
+}
+.btn-box {
+  display: inline-block;
+  font-size: 24rpx;
+  background-color: #636363;
+  padding: 6rpx 14rpx;
+  border-radius: 8rpx;
+}

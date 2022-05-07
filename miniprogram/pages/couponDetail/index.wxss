@@ -1,1 +1,107 @@
 /* pages/couponDetail/index.wxss */
+.coupon-detail {
+  height: 100vh;
+  background: url("http://udh.oss-cn-hangzhou.aliyuncs.com/5ffac1c2-9307-49dd-b468-004310a61583") no-repeat center top;
+  background-size: 750rpx 1334rpx;
+  background-color: #dbe0e7;
+  display: flex;
+  justify-content: center;
+}
+.main-content {
+  margin-top: 247rpx;
+  width: 628rpx;
+  height: 812rpx;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-avatar {
+  width: 162rpx;
+  height: 162rpx;
+  border-radius: 100%;
+  overflow: hidden;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 100%;
+  border-radius: 100%;
+  background-color: #ffffff;
+}
+.mini-app-name {
+  font-size: 36rpx;
+  color: #333333;
+  margin-top: -40rpx;
+  margin-bottom: 20rpx;
+}
+.coupon-name {
+  color: #2c2c2c;
+  font-size: 48rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.coupon-info {
+  width: 438rpx;
+  height: 222rpx;
+  background: url("http://udh.oss-cn-hangzhou.aliyuncs.com/bc8f2b06-39e3-4f0f-aa7d-befd31cca59c") no-repeat -120rpx -216rpx;
+  background-size: 640rpx 660rpx;
+  padding-top: 20rpx;
+}
+.bottom-content {
+  text-align: center;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #413129;
+  margin-bottom: 4rpx;
+}
+.top-content {
+  display: flex;
+  justify-content: center;
+}
+.coupon-amount {
+  font-size: 66rpx;
+  position: relative;
+  color: #ac7d4b;
+  margin-right: 20rpx;
+}
+.coupon-amount::before {
+  content: "￥";
+  position: absolute;
+  color: #ac7d4b;
+  left: -28rpx;
+  top: 18rpx;
+  font-size: 28rpx;
+}
+.right-content {
+  display: flex;
+  flex-direction: column;
+  color: #4c423d;
+  font-size: 26rpx;
+  padding-top: 10rpx;
+  white-space: nowrap;
+}
+.coupon-date {
+  color: #303133;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.use-btn {
+  width: 284rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  margin-top: 66rpx;
+  background: linear-gradient(90deg, rgba(241, 218, 186, 0.75), rgba(254, 246, 225, 0.75), rgba(240, 215, 184, 0.75));
+  box-shadow: 0px 3rpx 7rpx 0px rgba(0, 0, 0, 0.35);
+  border-radius: 20rpx;
+  color: #ad7f4d;
+  text-align: center;
+}
+.text-btn {
+  color: #ab7c4b;
+  font-size: 24rpx;
+  margin-top: 36rpx;
+  background-color: #ffffff;
+}
