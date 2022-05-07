@@ -1,0 +1,40 @@
+<!--pages/dramaList/index.wxml-->
+<view class="home-page">
+  <view class="tab-wrap">
+    <view class="person-wrap">
+      <block wx:for="{{personTab}}" wx:key="index">
+        <view wx:if="{{item>0}}" bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">{{item}}人</view>
+        <view wx:else bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">全部</view>
+      </block>
+    </view>
+  </view>
+  <view class="search-wrap">
+    <view class="search-box">
+      <image class="icon-search" src="https://udh.oss-cn-hangzhou.aliyuncs.com/bfcae5a6-e5f0-4f06-b538-5552f9406c9883640299918.svg"></image>
+      <input value="{{key}}" class="search-input" bindinput="changeInput" placeholder="请输入剧本名" placeholder-class="placeholderColor" bindconfirm="search"  />
+    </view>
+  </view>
+  <view class="drama-list">
+    <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index" data-id="{{item._id}}" bindtap="goToDetail">
+      <view class="bg">
+        <image class="bg-img" src="{{item.cover}}"></image>
+      </view>
+      <view class="content-box">
+        <view class="top-wrap">难度：{{item.level}}</view>
+        <view class="center-box">
+          <view class="left-box">
+            <block wx:for="{{item.types}}" wx:for-item="ele" wx:key="ele">
+              <view>{{ele}}</view>
+            </block>
+          </view>
+          <image class="img-cover" src="{{item.cover}}"></image>
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="botton-wrap">
+          <text class="price">{{item.price}}元/位</text>
+          <text class="btn-box">探索</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

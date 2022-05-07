@@ -17,4 +17,13 @@
       <navigator hover-class="none" open-type="switchTab" url="/pages/index/index" class="btn">回到首页</navigator>
     </view>
   </view>
+
+  <view class="coupon-wrap" wx:if="{{price > 50 && !isShow}}">
+    <image class="coupon-icon" src="https://udh.oss-cn-hangzhou.aliyuncs.com/420eb946-e7c0-483c-a8ad-f43b137bd3f003412Frame8.svg" />
+    <view style="flex: 1;">
+      <view class="coupon-name">恭喜您获得一张优惠券</view>
+      <view class="coupon-info">10元打本券，下次购买可使用</view>
+    </view>
+    <view class="coupon-btn" bindtap="getCoupon">领取</view>
+  </view>
 </view>

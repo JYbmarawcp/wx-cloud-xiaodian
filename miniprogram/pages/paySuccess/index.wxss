@@ -54,3 +54,50 @@ page {
   color: #666666;
   font-size: 22rpx;
 }
+
+.coupon-wrap {
+  box-sizing: border-box;
+  margin: 150rpx auto 0;
+  width: 95%;
+  padding: 20rpx 24rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 16rpx 0px rgba(242,242,242,0.5);
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.coupon-icon {
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 24rpx;
+}
+
+.coupon-btn {
+  width: 104rpx;
+  height: 64rpx;
+  background: #07C160;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  text-align: center;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.coupon-name {
+  font-size: 28rpx;
+  font-family: PingFang SC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #2F343F;
+  line-height: 40rpx;
+}
+
+.coupon-info {
+  font-size: 24rpx;
+  font-family: PingFang SC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #9DA2AE;
+}
