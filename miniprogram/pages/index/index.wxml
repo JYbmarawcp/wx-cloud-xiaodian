@@ -4,17 +4,15 @@
   <view class="home-content">
     <image class="shop-logo" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg" />
     <view class="shop-title">
-      <view class="wifi-wrap">
+      <view bindtap="makePhone" class="wifi-wrap">
         <image class="wifi-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/264d1859-83c8-4415-b0a1-86f5f59bbf63620687phone.svg" />
       </view>
-      <view class="wifi-wrap">
+      <view bindtap="getUser" class="wifi-wrap">
         <image class="wifi-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/fa1926ba-2944-42e7-9227-343e9bcdc4cc4191531wifi.svg" />
       </view>
     </view>
-    <view class="shop-name">
-      影子剧社
-    </view>
-    <view class="address-box">
+    <view class="shop-name">影子剧社</view>
+    <view class="address-box" bindtap="openMap">
       <view class="address-wrap">
         <image src="https://udh.oss-cn-hangzhou.aliyuncs.com/b40c83af-4a42-42f2-af33-be64dd1dd4128013address.svg" class="address-icon" mode="widthFix" />
       </view>
@@ -31,8 +29,12 @@
     <view class="title">热门剧本</view>
     <scroll-view enhanced="true" show-scrollbar="false" class="hotServiceList_scroll" scroll-x="true">
       <view class="hotService_content">
-        <view class="drama-wrap" wx:for="{{dramaList}}" wx:key="index">
-          <image class="drama-img" mode="widthFix" src="{{item.cover}}" />
+        <view class="drama-wrap" wx:for="{{dramaList}}" wx:key="index"
+          data-id="{{item._id}}"
+          bindtap="goToDetail"
+        >
+          <image class="drama-img" src="{{item.cover}}" />
+          <view>{{item.title}}</view>
         </view>
       </view>
     </scroll-view>

@@ -98,6 +98,7 @@ page {
   margin-top:0rpx;
   overflow: hidden;
   margin-bottom: 60rpx;
+  border-radius: 8rpx;
 }
 .marquee_text{
   font-size: 24rpx;
@@ -132,13 +133,20 @@ page {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
+  margin-bottom: 24rpx;
+  line-height: 40rpx;
 }
 .hotService_content {
   display: flex;
 }
 .drama-wrap {
-  width: 230rpx;
+  width: 220rpx;
+  margin-right: 22rpx;
+  text-align: center;
+  font-size: 28rpx;
 }
 .drama-img {
-  width: 100%;
+  border-radius: 8rpx;
+  width: 220rpx;
+  height: 296rpx;
 }
