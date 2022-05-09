@@ -15,7 +15,7 @@
       </view>
     </view>
     <view class="user-zichan">
-      <view class="zichan-box">
+      <view class="zichan-box" bindtap="getCoupons">
         <view>积分</view>
         <view class="num">{{userInfo.point || 0.00}}</view>
       </view>

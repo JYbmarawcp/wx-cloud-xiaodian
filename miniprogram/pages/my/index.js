@@ -39,6 +39,16 @@ Page({
               avatarUrl: userInfo.avatarUrl,
               nickName: userInfo.nickName,
             }
+          }).then(res => {
+            wx.showToast({
+              icon: "none",
+              title: '恭喜您获得一张优惠券~',
+            })
+            setTimeout(() => {
+              wx.navigateTo({
+                url: '/pages/couponDetail/index?id=8f75309d627887580207f3451a4f745c',
+              })
+            }, 1000);
           })
         } else {
           wx.cloud.database().collection('users').add({
@@ -48,6 +58,16 @@ Page({
               balance: 0,
               point: 0
             }
+          }).then(res => {
+            wx.showToast({
+              icon: "none",
+              title: '恭喜您获得一张优惠券~',
+            })
+            setTimeout(() => {
+              wx.navigateTo({
+                url: '/pages/couponDetail/index?id=8f75309d627887580207f3451a4f745c',
+              })
+            }, 1000);
           })
         }
       }
@@ -136,6 +156,11 @@ Page({
   goToBook() {
     // wx.navigateTo({
     //   url: '/pages/question/index',
+    // })
+  },
+  getCoupons() {
+    // wx.navigateTo({
+    //   url: '/pages/couponDetail/index?id=b69f67c062748d5b014f1d881f8a2afe',
     // })
   }
 })

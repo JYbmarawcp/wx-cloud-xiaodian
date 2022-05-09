@@ -1,5 +1,5 @@
 <view class="coupon-detail">
-  <view class="main-content">
+  <view class="main-content" wx:if="{{couponInfo._id}}">
     <view class="user-avatar">
       <image src="https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg" 
       alt="logo" class="image" mode="widthFix" />
@@ -25,7 +25,10 @@
       <text>有效期：领取后30天内有效</text>
     </view>
 
-    <view wx:if="{{isReceived}}" class="use-btn" bindtap="goToHome">
+    <view wx:if="{{couponInfo.status == 0}}" class="use-btn" bindtap="goToHome">
+      <text>发放完了</text>
+    </view>
+    <view wx:elif="{{isReceived}}" class="use-btn" bindtap="goToHome">
       <text>立即使用</text>
     </view>
     <button

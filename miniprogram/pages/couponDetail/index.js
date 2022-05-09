@@ -4,9 +4,18 @@ Page({
   data: {
     isReceived: false,
     userInfo: {},
-    couponInfo: {}
+    couponInfo: {},
+    userList: ["oQ6gZ5dUTKmUPXEkvJ4AO9Qyp10I", "oQ6gZ5Wpyu10v_9q8-TMaj5Mw1Qg"]
   },
   onLoad: function (options) {
+    if(options.collect){
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
+    }
+    wx.showShareMenu({
+      withShareTicket: true
+    })
     wx.showLoading({
       title: '加载中~',
     })
@@ -19,14 +28,41 @@ Page({
     wx.cloud.callFunction({
       name: 'getUser',
     }).then(res => {
+      console.log(app.globalData.scene);
+      if (app.globalData.scene === 1010) {
+        wx.switchTab({
+          url: '/pages/index/index',
+        })
+      }
       this.setData({
-        userInfo: res.result.userInfo
+        userInfo: res.result.userInfo,
+        scene: app.globalData.scene
       })
       wx.hideLoading()
     })
   },
   onShow: function () {
 
+  },
+  onAddToFavorites(res) {
+    return {
+      title: '禁止收藏哦',
+      query: 'collect=ture',
+    }
+  },
+  onShareAppMessage() {
+    let path;
+    if (this.data.userList.includes(this.data.userInfo._openid)) {
+      path = "/pages/couponDetail/index?id=" + this.data.couponInfo._id;
+    } else {
+      path = "/pages/couponDetail/index?id=" + "123";
+    }
+    console.log(path);
+    return {
+      title: "影子剧社送你一张专享优惠券~",
+      imageUrl: "https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg",
+      path
+    };
   },
   async getPhoneNumber(e) {
     wx.showLoading({

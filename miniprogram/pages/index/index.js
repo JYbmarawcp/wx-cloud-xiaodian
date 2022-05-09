@@ -161,7 +161,7 @@ Page({
       longitude: this.data.longitude,
       scale: 15,
       name: '影子剧社',
-      address: '浙江省杭州市拱墅区武林路100号(距地铁1/2号线凤起路站C1口步行410m)'
+      address: '浙江省杭州市拱墅区武林路100号鸿鼎商务楼(距地铁1/2号线凤起路站C1口步行410m)'
     })
   }
 });
