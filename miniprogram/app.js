@@ -45,5 +45,8 @@ App({
     }).then((resp) => {
       this.globalData.openid = resp.result.openid;
    })
+  },
+  onShow: function (options) {
+    this.globalData.scene = options.scene;
   }
 });
