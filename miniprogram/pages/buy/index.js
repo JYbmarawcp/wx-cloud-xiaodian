@@ -111,7 +111,7 @@ Page({
         price,
         realAmount: price,
         useBalance: 0,
-        isShow: price >= 100 ? true :false
+        isShow: price >= 99 ? true :false
       })
     }
   },

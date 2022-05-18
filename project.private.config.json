@@ -1,6 +1,16 @@
 {
   "setting": {},
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
     "miniprogram": {
       "list": [
         {
@@ -85,12 +95,11 @@
         {
           "name": "",
           "pathName": "pages/couponDetail/index",
-          "query": "id=b69f67c062748d5b014f1d881f8a2afe",
-          "launchMode": "default",
-          "scene": null
+          "query": "id=6d85a2b9627e638203edcf77213ff11a",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }
-  },
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+  }
 }

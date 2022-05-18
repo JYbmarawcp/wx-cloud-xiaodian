@@ -5,6 +5,7 @@ Page({
     isReceived: false,
     userInfo: {},
     couponInfo: {},
+    userCouponNum: 0,
     userList: ["oQ6gZ5dUTKmUPXEkvJ4AO9Qyp10I", "oQ6gZ5Wpyu10v_9q8-TMaj5Mw1Qg"]
   },
   onLoad: function (options) {
@@ -29,6 +30,15 @@ Page({
       name: 'getUser',
     }).then(res => {
       console.log(app.globalData.scene);
+      wx.cloud.database().collection('user_coupons').where({
+        _openid: app.globalData.openid,
+        coupon_id: options.id,
+        status: 0
+      }).get().then(res => {
+        this.setData({
+          userCouponNum: res.data.length || 0
+        })
+      })
       if (app.globalData.scene === 1010) {
         wx.switchTab({
           url: '/pages/index/index',
@@ -117,6 +127,13 @@ Page({
     }
   },
   receiveCoupon: debounce(function () {
+    if (this.data.couponInfo.limit <= this.data.userCouponNum) {
+      wx.showToast({
+        icon: "none",
+        title: '您已领取过了哦~',
+      })
+      return;
+    }
     if (this.data.userInfo.phoneNumber) {
       wx.showLoading({
         title: '加载中~',

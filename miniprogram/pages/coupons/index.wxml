@@ -21,7 +21,7 @@
       <div class="top-content">
         <div class="left-content">
           <text class="coupon-amount">{{item.couponRes[0].discount}}</text>
-          <text class="coupon-limit">满100可用</text>
+          <text class="coupon-limit">满99可用</text>
         </div>
         <div class="center-content">
           <text class="coupon-name">{{item.couponRes[0].ez_name}}</text>
