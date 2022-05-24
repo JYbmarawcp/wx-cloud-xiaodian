@@ -61,7 +61,8 @@ Page({
     }
   },
   onShareAppMessage() {
-    let path;
+    let path, title;
+    title = "影子剧社送你一张" + this.data.couponInfo.name
     if (this.data.userList.includes(this.data.userInfo._openid)) {
       path = "/pages/couponDetail/index?id=" + this.data.couponInfo._id;
     } else {
@@ -69,7 +70,7 @@ Page({
     }
     console.log(path);
     return {
-      title: "影子剧社送你一张专享优惠券~",
+      title: title,
       imageUrl: "https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg",
       path
     };
