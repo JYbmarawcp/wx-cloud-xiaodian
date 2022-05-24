@@ -19,6 +19,9 @@
       <view class="bg">
         <image class="bg-img" src="{{item.cover}}"></image>
       </view>
+      <view wx:if="{{item.cx_dj}}" class="cx-dj">
+        {{item.cx_dj}}
+      </view>
       <view class="content-box">
         <view class="top-wrap">难度：{{item.level}}</view>
         <view class="center-box">

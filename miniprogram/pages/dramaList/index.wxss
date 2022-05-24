@@ -48,6 +48,20 @@ page {
   color: #fdfdfd;
   overflow: hidden;
 }
+
+.cx-dj {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  background-color: #75aafa;
+  border-radius: 0 0 0 12rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
 .top-wrap {
   margin-bottom: 16rpx;
 }
