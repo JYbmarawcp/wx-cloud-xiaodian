@@ -32,19 +32,18 @@
 
 
 .coupon-info {
-  background-color: #fefcfb;
   border-radius: 20rpx;
-  box-shadow: 0 0 12rpx 0 rgba(0, 0, 0, 0.05);
   margin: 0 24rpx 20rpx;
 }
 .coupon-item {
-  background: #f7d0d0;
   border-radius: 20rpx;
   position: relative;
+  background: url("https://udh.oss-cn-hangzhou.aliyuncs.com/d66a0f3f-7c4e-42cf-b691-2b3d7ec922997Frame35431.svg") no-repeat;
+  background-size: 100%;
 }
 
 .top-content {
-  padding: 18rpx 36rpx 22rpx 40rpx;
+  padding: 4rpx 36rpx 16rpx 40rpx;
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -53,7 +52,7 @@
 .bottom-content {
   padding: 14rpx 24rpx;
   border-top: 1px dashed #e4e7ed;
-  color: #c7311d;
+  color: #714E3B;
   font-size: 11px;
 }
 .left-content {
@@ -65,7 +64,7 @@
   padding-top: 4rpx;
 }
 .coupon-amount {
-  color: #c7311d;
+  color: #714E3B;
   font-size: 60rpx;
   font-weight: 600;
   position: relative;
@@ -85,7 +84,7 @@
 .coupon-type {
   font-size: 22rpx;
   font-weight: 400;
-  color: #c7311d;
+  color: #8A6856;
 }
 .center-content {
   display: flex;
@@ -97,7 +96,7 @@
 .coupon-name {
   font-size: 28rpx;
   font-weight: 600;
-  color: #c7311d;
+  color: #714E3B;
   margin-bottom: 8rpx;
   max-width: 300rpx;
   overflow: hidden;
@@ -107,7 +106,7 @@
 .date {
   font-size: 22rpx;
   font-weight: 400;
-  color: #c7311d;
+  color: #8A6856;
   line-height: 32rpx;
 }
 
@@ -126,9 +125,8 @@
   text-align: center;
   font-size: 24rpx;
   font-size: 24rpx;
-  color: #c7311d;
-  border: 2rpx solid #c7311d;
-  background-color: #fff6f1;
+  color: #FFFFFF;
+  background: linear-gradient(280.95deg, #876541 -6.08%, #B89C7E 113.85%);
   border-radius: 200rpx;
 }
 .icon-use {
@@ -139,7 +137,8 @@
   opacity: 0.5;
 }
 .coupon-tip {
+  background-color: #ffffff;
   padding: 12rpx;
   font-size: 24rpx;
-  color: #c7311d;
+  color: #714E3B;
 }

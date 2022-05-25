@@ -61,13 +61,13 @@ Page({
   },
   switch1Change() {
     if (!this.data.switch1Checked && this.data.price) {
-      if (this.data.userInfo.balance >= this.data.price) {
+      if (this.data.userInfo.balance >= this.data.realAmount) {
         this.setData({
           realAmount: 0,
-          useBalance: this.data.price
+          useBalance: this.data.realAmount
         })
       } else {
-        const realAmount = ((this.data.price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
+        const realAmount = ((this.data.price * 100 - this.data.userInfo.balance * 100 - this.data.useCoupon * 100) / 100).toFixed(2)
         this.setData({
           realAmount,
           useBalance: this.data.userInfo.balance
@@ -75,45 +75,55 @@ Page({
       }
     } else {
       this.setData({
-        realAmount: this.data.price || 0,
+        realAmount: (this.data.price - this.data.useCoupon) || 0,
         useBalance: 0
       })
     }
     this.setData({
       switch1Checked: !this.data.switch1Checked,
-      isShow: this.data.switch1Checked ? true : false,
-      index: 0,
-      selectCoupon: "",
-      useCoupon: 0
+      // index: 0,
+      // selectCoupon: "",
+      // useCoupon: 0,
+      // isShow: this.data.switch1Checked ? true : false,
     })
   },
   changeInput(e) {
     const price = Number(e.detail.value)
-    if (this.data.switch1Checked) {
-      if (this.data.userInfo.balance >= price) {
-        this.setData({
-          price,
-          realAmount: 0,
-          useBalance: price,
-          isShow: false
-        })
-      } else {
-        const realAmount = ((price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
-        this.setData({
-          price,
-          realAmount,
-          useBalance: this.data.userInfo.balance,
-          isShow: false
-        })
-      }
-    } else {
-      this.setData({
-        price,
-        realAmount: price,
-        useBalance: 0,
-        isShow: price >= 99 ? true :false
-      })
-    }
+    this.setData({
+      price,
+      realAmount: price,
+      useBalance: 0,
+      useCoupon: 0,
+      selectCoupon: "",
+      isShow: price >= 99 ? true :false,
+      switch1Checked: false,
+    })
+    // if (this.data.switch1Checked) {
+    //   if (this.data.userInfo.balance >= price) {
+    //     this.setData({
+    //       price,
+    //       realAmount: 0,
+    //       useBalance: price,
+    //       isShow: false,
+
+    //     })
+    //   } else {
+    //     const realAmount = ((price * 100 - this.data.userInfo.balance * 100 ) / 100).toFixed(2)
+    //     this.setData({
+    //       price,
+    //       realAmount,
+    //       useBalance: this.data.userInfo.balance,
+    //       isShow: false
+    //     })
+    //   }
+    // } else {
+    //   this.setData({
+    //     price,
+    //     realAmount: price,
+    //     useBalance: 0,
+    //     isShow: price >= 99 ? true :false
+    //   })
+    // }
   },
   bindPickerChange: function(e) {
     const discount = this.data.couponsList[e.detail.value].couponRes[0].discount;
@@ -122,7 +132,9 @@ Page({
       index: e.detail.value,
       selectCoupon: this.data.couponsList[e.detail.value].name,
       useCoupon: discount,
-      realAmount
+      realAmount,
+      useBalance: 0,
+      switch1Checked: false
     })
   },
   addOrder() {
@@ -146,6 +158,7 @@ Page({
         orderId,
         goodMoney: price,
         status: 0, //未支付状态
+        useCouponNum: this.data.useCoupon,
         _createTime: +new Date(),
         _updateTime: +new Date(),
       }
@@ -180,7 +193,15 @@ Page({
             totalFee: -this.data.useBalance,
           }
         })
-
+        // 优惠券处理
+        if (that.data.useCoupon) {
+          wx.cloud.database().collection('user_coupons').doc(that.data.couponsList[that.data.index]._id).update({
+            data: {
+              status: 1,
+              _updateTime: +new Date(),
+            }
+          })
+        }
         wx.cloud.database().collection('orders').doc(this.data.order_id).update({
           data: {
             status: 1,

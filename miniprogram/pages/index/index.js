@@ -51,49 +51,8 @@ Page({
     })
   },
   getUser() {
-    if (this.data.userInfo.nickName) {
-      this.connectWifi();
-    } else {
-      wx.getUserProfile({
-        desc: "业务需要",
-        lang: "zh_CN",
-        success: res => {
-          let userInfo = this.data.userInfo;
-          userInfo.avatarUrl = res.userInfo.avatarUrl;
-          userInfo.nickName = res.userInfo.nickName;
-          this.setData({
-            userInfo
-          })
-          // 添加用户
-          if (this.data.userInfo._openid) {
-            wx.cloud.database().collection('users').where({
-              _openid: app.globalData.openid
-            }).update({
-              data: {
-                avatarUrl: userInfo.avatarUrl,
-                nickName: userInfo.nickName,
-              }
-            })
-          } else {
-            wx.cloud.database().collection('users').add({
-              data: {
-                avatarUrl: userInfo.avatarUrl,
-                nickName: userInfo.nickName,
-                balance: 0,
-                point: 0
-              }
-            })
-          }
-          this.connectWifi();
-        },
-        fail: res => {
-          wx.showToast({
-            icon: 'none',
-            title: '请先授权头像',
-          })
-        }
-      })
-    }
+    // if (this.data.userInfo.nickName) {
+    this.connectWifi();
   },
   connectWifi() {
     var that = this;
