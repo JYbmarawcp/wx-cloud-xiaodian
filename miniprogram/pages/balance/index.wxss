@@ -34,7 +34,7 @@
   color: rgba(238, 2, 35, 1);
   font-weight: bold;
   letter-spacing: 4rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
   border: 2rpx solid rgba(254, 106, 17, 1);
 }
 .flex-center {

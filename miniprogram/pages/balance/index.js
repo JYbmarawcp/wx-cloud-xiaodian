@@ -3,7 +3,18 @@ Page({
   data: {
     balance: "0.00",
     price: 500,
-    userInfo: {}
+    userInfo: {},
+    balanceType: [
+      {
+        price: 300,
+        realPrice: 400
+      },
+      {
+        price: 500,
+        realPrice: 700
+      }
+    ],
+    currentType: 0
   },
   onLoad: function (options) {
     this.getBalane()
@@ -13,7 +24,7 @@ Page({
       title: '加载中~',
     })
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
-    const price = this.data.price;
+    const price = this.data.balanceType[this.data.currentType].price;
     // 添加订单
     wx.cloud.database().collection('orders').add({
       data: {
@@ -45,7 +56,7 @@ Page({
     wx.requestPayment({
       ...payment,
       success(res) {
-        const realPrice = price + 100;
+        const realPrice = this.data.balanceType[this.data.currentType].realPrice;
         wx.cloud.database().collection('account').add({
           data: {
             amount: realPrice,

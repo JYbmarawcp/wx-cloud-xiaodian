@@ -5,19 +5,22 @@
   </view>
 
   <view class="grey-wrap">请选择充值类型</view>
-  <view class="item-box">
-    <view class="flex-center">
-      <text>600</text>
-      <text class="fs28">元</text>
-    </view>
-    <view class="flex-center fs24">
-      <text class="color-b">充</text>
-      <text>500</text>
-      <text class="color-b">元</text>
-      <text class="color-b">,得</text>
-      <text>600</text>
-    </view>
-  </view>
 
+
+  <block wx:for="{{balanceType}}" wx:key="index">
+    <view class="item-box" bindtap="chooseType">
+      <view class="flex-center">
+        <text>{{item.price}}</text>
+        <text class="fs28">元</text>
+      </view>
+      <view class="flex-center fs24">
+        <text class="color-b">充</text>
+        <text>{{item.price}}</text>
+        <text class="color-b">元</text>
+        <text class="color-b">,得</text>
+        <text>{{item.realPrice}}</text>
+      </view>
+    </view>
+  </block>
   <view class="btn-pay" bindtap="addOrder">立即充值</view>
 </view>
