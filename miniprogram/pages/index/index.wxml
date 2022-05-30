@@ -34,7 +34,7 @@
         🌈 会员储值卡 | 开通即享优惠
       </view>
       <view class="flex-center">
-        立即开通
+       <span>立即开通</span>
         <image class="arrow-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/459cd0bd-a2b7-42c6-9b90-d76536127f428arrowright.svg" />
       </view>
     </button>

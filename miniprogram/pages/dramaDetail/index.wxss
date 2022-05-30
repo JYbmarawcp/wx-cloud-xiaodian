@@ -89,9 +89,9 @@ page {
   white-space: nowrap;
 }
 .role-drama {
-  width: 200rpx;
-  margin-right: 12rpx;
+  width: 100%;
   border-radius: 8rpx;
+  margin-bottom: 12rpx;
 }
 
 .contact-btn {
