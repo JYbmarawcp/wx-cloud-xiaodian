@@ -8,7 +8,11 @@
 
 
   <block wx:for="{{balanceType}}" wx:key="index">
-    <view class="item-box" bindtap="chooseType">
+    <view 
+      class="item-box {{currentType == index ? 'active' : ''}}" 
+      data-index="{{index}}" 
+      bindtap="chooseType"
+    >
       <view class="flex-center">
         <text>{{item.price}}</text>
         <text class="fs28">元</text>
@@ -20,7 +24,16 @@
         <text class="color-b">,得</text>
         <text>{{item.realPrice}}</text>
       </view>
+      <view>打本低至{{index ? "71" : "75"}}折!!!</view>
+      <view class="tip-wrap" wx:if="{{index === 0}}">热门推荐</view>
+      <image wx:if="{{currentType == index}}"
+        class="choose-img"
+        src="https://udh.oss-cn-hangzhou.aliyuncs.com/9fe6bf42-7f35-4b9a-8c12-a9097612a6ae1Vector5592.svg"
+      />
     </view>
   </block>
-  <view class="btn-pay" bindtap="addOrder">立即充值</view>
+  <view class="footer-wrap">
+    <view class="pay-price">￥{{balanceType[currentType].price}}</view>
+    <view class="btn-pay" bindtap="addOrder">确认充值</view>
+  </view>
 </view>

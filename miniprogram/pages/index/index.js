@@ -122,5 +122,63 @@ Page({
       name: '影子剧社',
       address: '浙江省杭州市拱墅区武林路100号鸿鼎商务楼(距地铁1/2号线凤起路站C1口步行410m)'
     })
-  }
+  },
+  goToVip() {
+    if (this.data.userInfo.phoneNumber) {
+      wx.navigateTo({
+        url: '/pages/balance/index'
+      })
+    }
+  },
+  async getPhoneNumber(e) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    if (e.detail.errMsg == "getPhoneNumber:ok") {
+        const result = await wx.cloud.callFunction({
+            name: 'bind_mobile',
+            data: {
+                type: 'login',
+                id: wx.cloud.CloudID(e.detail.cloudID)
+            }
+        })
+        const phoneNumber = result.result.id.data.phoneNumber;
+        let userInfo = this.data.userInfo;
+        userInfo.phoneNumber = phoneNumber;
+        this.setData({
+          userInfo
+        })
+        if (this.data.userInfo._openid) {
+          wx.cloud.database().collection('users').where({
+            _openid: app.globalData.openid
+          }).update({
+            data: {
+              phoneNumber: phoneNumber,
+            }
+          })
+        } else {
+          wx.cloud.database().collection('users').add({
+            data: {
+              phoneNumber: phoneNumber,
+              balance: 0,
+              point: 0
+            }
+          })
+        }
+        wx.showToast({
+          title: '授权成功',
+          icon: 'none'
+        })
+    } else {
+      wx.hideLoading({
+          complete: (res) => {
+              wx.showToast({
+                  title: '用户拒绝，获取失败',
+                  icon: 'none'
+              })
+          }
+      })
+    }
+    wx.hideLoading()
+  },
 });

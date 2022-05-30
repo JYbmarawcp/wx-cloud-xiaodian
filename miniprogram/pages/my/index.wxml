@@ -43,7 +43,7 @@
     >
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/ef041d49-16f1-4ffa-a11d-f04f5b3faae21190838642x.png"></image>
-        <text>充值有礼</text>
+        <text>会员储值</text>
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>

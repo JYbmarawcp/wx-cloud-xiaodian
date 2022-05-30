@@ -19,6 +19,12 @@ Page({
   onLoad: function (options) {
     this.getBalane()
   },
+  chooseType(event) {
+    let index = event.currentTarget.dataset.index;
+    this.setData({
+      currentType: index
+    })
+  },
   addOrder() {
     wx.showLoading({
       title: '加载中~',
@@ -56,7 +62,7 @@ Page({
     wx.requestPayment({
       ...payment,
       success(res) {
-        const realPrice = this.data.balanceType[this.data.currentType].realPrice;
+        const realPrice = that.data.balanceType[that.data.currentType].realPrice;
         wx.cloud.database().collection('account').add({
           data: {
             amount: realPrice,

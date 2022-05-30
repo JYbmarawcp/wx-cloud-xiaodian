@@ -97,7 +97,7 @@ page {
   width: 100%;
   margin-top:0rpx;
   overflow: hidden;
-  margin-bottom: 60rpx;
+  margin-bottom: 20rpx;
   border-radius: 8rpx;
 }
 .marquee_text{
@@ -109,6 +109,14 @@ page {
   animation-iteration-count: infinite;
   animation-timing-function:linear;
   letter-spacing: 2rpx;
+}
+.vip-wrap {
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  font-size: 24rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  justify-content: space-between;
 }
 .botton-line {
   width: 100%;
@@ -149,4 +157,9 @@ page {
   border-radius: 8rpx;
   width: 220rpx;
   height: 296rpx;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  color: #9785a0;
 }
