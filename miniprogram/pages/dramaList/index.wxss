@@ -9,13 +9,14 @@ page {
   min-height: 100vh;
 }
 .tab-wrap {
-  padding: 24rpx 36rpx;
+  padding: 24rpx 36rpx 6rpx;
   color: #bfbed0;
 
 }
 .person-wrap {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 12rpx;
 }
 .tab-item {
   margin-right: 20rpx;

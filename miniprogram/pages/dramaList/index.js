@@ -6,6 +6,8 @@ Page({
     dramaList: [],
     currentIndex: 0,
     personTab: ["0", "4","5","6","7","8","9", "10"],
+    currentType: "全部",
+    typeTab: ["全部", "硬核", "欢乐", "情感", "阵营"],
     key: "",
     pageIndex: 0,
     canContinue: true,
@@ -44,10 +46,25 @@ Page({
     wx.showLoading({
       title: '加载中~',
     })
+    const skipNum = 20*this.data.pageIndex;
     if (this.data.currentIndex) {
-      const skipNum = 20*this.data.pageIndex;
       wx.cloud.database().collection('drama').skip(skipNum).orderBy('_updateTime', 'desc').where({
         person: this.data.currentIndex
+      }).get().then(res => {
+        let canContinue = true;
+        if (res.data.length === 0) {
+          canContinue = false;
+        }
+        this.setData({
+          dramaList: [...this.data.dramaList, ...res.data],
+          pageIndex: this.data.pageIndex+1,
+          canContinue
+        })
+        wx.hideLoading()
+      })
+    } else if (this.data.currentType !== "全部") {
+      wx.cloud.database().collection('drama').skip(skipNum).orderBy('_updateTime', 'desc').where({
+        types: wx.cloud.database().command.all([this.data.currentType])
       }).get().then(res => {
         let canContinue = true;
         if (res.data.length === 0) {
@@ -69,7 +86,7 @@ Page({
       key: e.detail.value.trim()
     })
   },
-  sort(e) {
+  sortPerson(e) {
     wx.showLoading({
       title: '加载中~',
     })
@@ -83,7 +100,7 @@ Page({
     })
     if (currentIndex) {
       wx.cloud.database().collection('drama').orderBy('_updateTime', 'desc').where({
-        person: currentIndex
+        person: currentIndex,
       }).get().then(res => {
         this.setData({
           dramaList: res.data,
@@ -93,6 +110,39 @@ Page({
       })
     } else {
       wx.cloud.database().collection('drama').orderBy('_updateTime', 'desc').get().then(res => {
+        this.setData({
+          dramaList: res.data,
+          pageIndex: this.data.pageIndex+1,
+        })
+        wx.hideLoading()
+      })
+    }
+  },
+  sortType(e) {
+    wx.showLoading({
+      title: '加载中~',
+    })
+    const currentType = e.target.dataset.type;
+    this.setData({
+      key: "",
+      canContinue: true,
+      pageIndex: 0,
+      currentIndex: 0,
+      currentType,
+      dramaList: []
+    })
+    if (currentType === "全部") {
+      wx.cloud.database().collection('drama').orderBy('_updateTime', 'desc').get().then(res => {
+        this.setData({
+          dramaList: res.data,
+          pageIndex: this.data.pageIndex+1,
+        })
+        wx.hideLoading()
+      })
+    } else {
+      wx.cloud.database().collection('drama').orderBy('_updateTime', 'desc').where({
+        types: wx.cloud.database().command.all([currentType])
+      }).get().then(res => {
         this.setData({
           dramaList: res.data,
           pageIndex: this.data.pageIndex+1,

@@ -3,8 +3,13 @@
   <view class="tab-wrap">
     <view class="person-wrap">
       <block wx:for="{{personTab}}" wx:key="index">
-        <view wx:if="{{item>0}}" bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">{{item}}人</view>
-        <view wx:else bindtap="sort" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">全部</view>
+        <view wx:if="{{item>0}}" bindtap="sortPerson" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">{{item}}人</view>
+        <view wx:else bindtap="sortPerson" data-index="{{item}}" class="tab-item {{currentIndex == item ? 'active' : ''}}">全部</view>
+      </block>
+    </view>
+    <view class="person-wrap">
+      <block wx:for="{{typeTab}}" wx:key="index">
+        <view bindtap="sortType" data-type="{{item}}" class="tab-item {{currentType == item ? 'active' : ''}}">{{item}}</view>
       </block>
     </view>
   </view>
