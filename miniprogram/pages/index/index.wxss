@@ -111,6 +111,8 @@ page {
   letter-spacing: 2rpx;
 }
 .vip-wrap {
+  height: 74rpx;
+  line-height: 74rpx;
   box-sizing: border-box;
   padding: 0 24rpx;
   font-size: 24rpx;

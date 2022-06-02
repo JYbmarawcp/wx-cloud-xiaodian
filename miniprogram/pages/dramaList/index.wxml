@@ -22,7 +22,7 @@
   <view class="drama-list">
     <view class="item-wrap" wx:for="{{dramaList}}" wx:key="index" data-id="{{item._id}}" bindtap="goToDetail">
       <view class="bg">
-        <image class="bg-img" src="{{item.cover}}"></image>
+        <image class="bg-img" src="{{item.cover}}" lazy-load="true"></image>
       </view>
       <view wx:if="{{item.cx_dj}}" class="cx-dj">
         {{item.cx_dj}}
@@ -35,7 +35,7 @@
               <view>{{ele}}</view>
             </block>
           </view>
-          <image class="img-cover" src="{{item.cover}}"></image>
+          <image class="img-cover" src="{{item.cover}}" lazy-load="true"></image>
         </view>
         <view class="title">{{item.title}}</view>
         <view class="botton-wrap">
