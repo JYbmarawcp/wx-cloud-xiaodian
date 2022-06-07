@@ -71,7 +71,7 @@ Page({
     console.log(path);
     return {
       title: title,
-      imageUrl: "https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg",
+      imageUrl: this.data.couponInfo.shareImg || "https://udh.oss-cn-hangzhou.aliyuncs.com/d8ef5cac-f664-42fa-84ba-7dec47e72a285786482logo.jpg",
       path
     };
   },

@@ -96,6 +96,7 @@ Page({
       canContinue: true,
       pageIndex: 0,
       currentIndex: currentIndex,
+      currentType: "全部",
       dramaList: []
     })
     if (currentIndex) {

@@ -103,7 +103,7 @@ Page({
           })
         }
         wx.navigateTo({
-          url: '/pages/buy/index?price=' + this.data.dramaDetail.price,
+          url: '/pages/buy/index?price=' + this.data.dramaDetail.price + '&drama=' + this.data.dramaDetail.title,
         })
         wx.showToast({
           title: '授权成功',
