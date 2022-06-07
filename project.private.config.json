@@ -86,7 +86,11 @@
         {
           "name": "",
           "pathName": "pages/couponDetail/index",
+<<<<<<< HEAD
           "query": "id=b69f67c062748d5b014f1d881f8a2afe",
+=======
+          "query": "id=f6e08a646279d2bb020dd6c018adf5b1",
+>>>>>>> da5ec0f16991f9c3cbfd653b82989021ec60cefc
           "launchMode": "default",
           "scene": null
         }
