@@ -24,7 +24,7 @@
         <text class="color-b">,得</text>
         <text>{{item.realPrice}}</text>
       </view>
-      <view>打本低至{{index ? "71" : "75"}}折!!!</view>
+      <view>打本低至{{item.rate}}折!!!</view>
       <view class="tip-wrap" wx:if="{{index === 0}}">热门推荐</view>
       <image wx:if="{{currentType == index}}"
         class="choose-img"

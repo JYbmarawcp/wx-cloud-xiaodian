@@ -7,11 +7,18 @@ Page({
     balanceType: [
       {
         price: 300,
-        realPrice: 400
+        realPrice: 340,
+        rate: 88
       },
       {
         price: 500,
-        realPrice: 700
+        realPrice: 600,
+        rate: 83
+      },
+      {
+        price: 900,
+        realPrice: 1200,
+        rate: 75
       }
     ],
     currentType: 0
