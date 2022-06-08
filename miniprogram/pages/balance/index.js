@@ -4,27 +4,12 @@ Page({
     balance: "0.00",
     price: 500,
     userInfo: {},
-    balanceType: [
-      {
-        price: 300,
-        realPrice: 340,
-        rate: 88
-      },
-      {
-        price: 500,
-        realPrice: 600,
-        rate: 83
-      },
-      {
-        price: 900,
-        realPrice: 1200,
-        rate: 75
-      }
-    ],
+    balanceType: [],
     currentType: 0
   },
   onLoad: function (options) {
     this.getBalane()
+    this.getCardList()
   },
   chooseType(event) {
     let index = event.currentTarget.dataset.index;
@@ -112,6 +97,13 @@ Page({
     }).get().then(res => {
       this.setData({
         userInfo: res.data[0] || {}
+      })
+    })
+  },
+  getCardList() {
+    wx.cloud.database().collection('vip_card').get().then(res => {
+      this.setData({
+        balanceType: res.data
       })
     })
   }
