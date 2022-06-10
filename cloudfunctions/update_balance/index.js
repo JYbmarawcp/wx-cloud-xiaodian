@@ -13,6 +13,7 @@ exports.main = async (event, context) => {
     data: {
       balance: _.inc(event.totalFee),
       point: _.inc(event.point),
+      discount: event.discount
     }
   }).then(res => {
     return {

@@ -66,6 +66,7 @@ Page({
   pay(payment, price) {
     var that = this;
     wx.hideLoading();
+
     wx.requestPayment({
       ...payment,
       success(res) {
@@ -76,15 +77,18 @@ Page({
             type: "add"
           }
         })
+        let newDiscount = (that.data.userInfo.discount * that.data.userInfo.balance + that.data.balanceType[that.data.currentType].price) / (that.data.userInfo.balance + that.data.balanceType[that.data.currentType].realPrice)
         wx.cloud.callFunction({
           name: 'update_balance',
           data: {
             totalFee: realPrice,
-            point: price
+            point: price,
+            discount: newDiscount
           }
         }).then(res => {
           that.getBalane()
         })
+
         wx.cloud.database().collection('orders').doc(that.data.order_id).update({
           data: {
             status: 1,
