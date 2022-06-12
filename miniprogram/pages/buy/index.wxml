@@ -43,4 +43,7 @@
     <view class="text-line">实际支付金额</view>
     <view bindtap="addOrder" class="btn-pay">立即支付</view>
   </view>
+  <view class="btn-bottom" wx:if="{{userInfo.balance}}" bindtap="goToCardDetail">
+    储蓄卡明细
+  </view>
 </view>

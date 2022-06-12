@@ -91,6 +91,15 @@
       </view>
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>
-    
+
+    <button style="width: 100%" class="default-btn menu-item" bindtap="goToUserAdmin"
+      wx:if="{{userInfo._openid === 'oQ6gZ5dUTKmUPXEkvJ4AO9Qyp10I'}}"
+    >
+      <view class="flex-left">
+        <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/aef7adc1-0f46-45db-87de-cad78195c3c3e370e8e760d.png"></image>
+        <text>用户管理</text>
+      </view>
+      <image class="icon-arrow" src="../../images/arrow.svg"></image>
+    </button>
   </view>
 </view>

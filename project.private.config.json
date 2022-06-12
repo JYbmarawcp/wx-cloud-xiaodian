@@ -1,6 +1,4 @@
 {
-  "setting": {},
-  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "condition": {
     "miniprogram": {
       "list": [
@@ -10,91 +8,21 @@
           "query": ""
         },
         {
-          "name": "pages/getOpenId/index",
-          "pathName": "pages/getOpenId/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/deployService/index",
-          "pathName": "pages/deployService/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/selectRecord/index",
-          "pathName": "pages/selectRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sumRecordResult/index",
-          "pathName": "pages/sumRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecord/index",
-          "pathName": "pages/updateRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordResult/index",
-          "pathName": "pages/updateRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordSuccess/index",
-          "pathName": "pages/updateRecordSuccess/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/paySuccess/index",
-          "pathName": "pages/paySuccess/index",
-          "query": "order_id=617ef50c622f07e20b82d39702dcd108",
-          "scene": null
-        },
-        {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/paySuccess/index",
-          "pathName": "pages/paySuccess/index",
-          "query": "orderId=807102f6623edfa901fc29fe27a96fef",
-          "scene": null
-        },
-        {
           "name": "",
-          "pathName": "pages/connectWifi/index",
+          "pathName": "pages/buy/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/question/index",
+          "pathName": "pages/cardDetail/index",
           "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/couponDetail/index",
-<<<<<<< HEAD
-          "query": "id=b69f67c062748d5b014f1d881f8a2afe",
-=======
-          "query": "id=f6e08a646279d2bb020dd6c018adf5b1",
->>>>>>> da5ec0f16991f9c3cbfd653b82989021ec60cefc
           "launchMode": "default",
           "scene": null
         }
       ]
     }
-  }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
 }

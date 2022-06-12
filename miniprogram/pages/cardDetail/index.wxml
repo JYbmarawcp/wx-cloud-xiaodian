@@ -1,0 +1,14 @@
+<view class="card-detail">
+  <view class="title">储值卡余额明细</view>
+  <view
+    wx:for="{{cardInfo}}"
+    wx:key="index"
+    class="flex-item-box"
+  >
+    <view>
+      <view>{{item.type === "reduce" ? "扣除" : "充值"}}</view>
+      <view class="date-time">{{item.time}}</view>
+    </view>
+    <view class="amount">{{item.type === "reduce" ? "-" : "+"}}{{item.amount}}</view>
+  </view>
+</view>

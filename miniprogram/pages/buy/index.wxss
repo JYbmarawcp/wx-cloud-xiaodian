@@ -74,3 +74,13 @@ page {
   height: 26rpx;
   margin-left: 6rpx;
 }
+
+.btn-bottom {
+  position: absolute;
+  bottom: env(safe-area-inset-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26rpx;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}

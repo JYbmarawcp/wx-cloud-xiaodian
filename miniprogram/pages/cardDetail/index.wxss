@@ -1,0 +1,26 @@
+.card-detail {
+  padding: 32rpx;
+}
+.card-detail .title {
+  color: gray;
+  margin-bottom: 28rpx;
+  font-size: 28rpx;
+}
+
+.flex-item-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+  font-size: 28rpx;
+}
+
+.date-time {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 24rpx;
+}
+
+.amount {
+  font-size: 32rpx;
+  font-weight: 600;
+}

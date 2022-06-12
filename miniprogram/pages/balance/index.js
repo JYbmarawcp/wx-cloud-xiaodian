@@ -59,7 +59,8 @@ Page({
         wx.cloud.database().collection('account').add({
           data: {
             amount: realPrice,
-            type: "add"
+            type: "add",
+            _updateTime: +new Date(),
           }
         })
         let newDiscount = (that.data.userInfo.discount * that.data.userInfo.balance + that.data.balanceType[that.data.currentType].price) / (that.data.userInfo.balance + that.data.balanceType[that.data.currentType].realPrice)

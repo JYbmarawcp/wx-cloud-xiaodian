@@ -162,5 +162,10 @@ Page({
     // wx.navigateTo({
     //   url: '/pages/couponDetail/index?id=b69f67c062748d5b014f1d881f8a2afe',
     // })
+  },
+  goToUserAdmin() {
+    wx.navigateTo({
+      url: '/pages/userAdmin/index',
+    })
   }
 })

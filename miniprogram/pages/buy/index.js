@@ -149,6 +149,7 @@ Page({
       title: '加载中~',
     })
     let orderId = Date.now() + '' + Math.ceil(Math.random() * 10);
+
     // 添加订单
     const price = this.data.realAmount ? Number(this.data.realAmount) : 0;
     wx.cloud.database().collection('orders').add({
@@ -180,11 +181,14 @@ Page({
             this.pay(res.result.payment, price)
         })
       } else {
+        // 实际收入
+        let income = this.data.useBalance * this.data.userInfo.discount;
         // 全余额支付
         wx.cloud.database().collection('account').add({
           data: {
             amount: this.data.useBalance,
-            type: "reduce"
+            type: "reduce",
+            _updateTime: +new Date(),
           }
         })
         wx.cloud.callFunction({
@@ -206,6 +210,7 @@ Page({
           data: {
             status: 1,
             useBalance: this.data.useBalance,
+            income: income,
             _updateTime: +new Date(),
           },
           success() {
@@ -240,7 +245,8 @@ Page({
           wx.cloud.database().collection('account').add({
             data: {
               amount: that.data.useBalance,
-              type: "reduce"
+              type: "reduce",
+              _updateTime: +new Date(),
             }
           })
         }
@@ -253,11 +259,14 @@ Page({
           }
         })
 
+        // 实际收入
+        let income = that.data.useBalance ? (that.data.useBalance * that.data.userInfo.discount + point) : point;
         wx.cloud.database().collection('orders').doc(that.data.order_id).update({
           data: {
             status: 1,
             useBalance: that.data.useBalance,
             useCoupon: that.data.useCoupon ? that.data.couponsList[that.data.index]._id : "",
+            income,
             _updateTime: +new Date(),
           },
           success() {
@@ -278,4 +287,9 @@ Page({
       }
     })
   },
+  goToCardDetail() {
+    wx.navigateTo({
+      url: '/pages/cardDetail/index'
+    })
+  }
 })
