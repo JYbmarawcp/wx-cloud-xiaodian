@@ -20,6 +20,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/userAdmin/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

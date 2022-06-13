@@ -1,0 +1,25 @@
+<view class="user-page">
+  <view class="flex">
+    <image class="user-avatar" src="{{userInfo.avatarUrl}}" />
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class="page-section">
+    <label class="radio" bindtap="changeRadio" data-checked="0">
+      <radio value="r1" checked="{{type == 0}}"/>扣除
+    </label>
+    <label class="radio" bindtap="changeRadio" data-checked="1">
+      <radio value="r2" checked="{{type == 1}}" />充值
+    </label>
+  </view>
+
+  <view wx:if="{{type == 0}}">
+    <view>
+      当前余额{{userInfo.balance}}, 扣除后余额{{}}
+    </view>
+    <view>扣除</view>
+  </view>
+
+  <view wx:else>
+    23
+  </view>
+</view>

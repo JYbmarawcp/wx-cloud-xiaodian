@@ -1,1 +1,31 @@
-/* pages/userAdmin/index.wxss */
+.user-admin-page {
+  padding: 32rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.right-box {
+  flex: 1;
+}
+
+.user-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.icon-arrow {
+  width: 36rpx;
+  height: 36rpx;
+}

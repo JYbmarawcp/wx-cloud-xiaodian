@@ -1,2 +1,22 @@
-<!--pages/userAdmin/index.wxml-->
-<text>pages/userAdmin/index.wxml</text>
+<view class="user-admin-page">
+  <!-- <view class="flex">
+    <view>昵称：</view>
+    <view class="right-box">
+      <input type="text" placeholder="请输入昵称" bindinput="changeName" />
+    </view>
+  </view> -->
+  <view class="flex">
+    <view>手机号：</view>
+    <view class="right-box">
+      <input type="number" placeholder="请输入手机号" bindinput="changePhone" />
+    </view>
+  </view>
+  <button type="primary" bindtap="searchUser">查询</button>
+
+  <view wx:for="{{userList}}" wx:key="index" class="user-wrap" bindtap="goUserDetail" data-openid="{{item._openid}}">
+    <image class="user-img" src="{{item.avatarUrl}}" />
+    <view>{{item.nickName}}</view>
+    <view>余额：{{item.balance}}</view>
+    <image class="icon-arrow" src="../../images/arrow.svg"></image>
+  </view>
+</view>
