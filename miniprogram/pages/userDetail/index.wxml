@@ -12,14 +12,31 @@
     </label>
   </view>
 
-  <view wx:if="{{type == 0}}">
+  <view wx:if="{{type == 0}}" class="lh40">
     <view>
-      当前余额{{userInfo.balance}}, 扣除后余额{{}}
+      当前余额{{userInfo.balance}}, 扣除后余额{{realBalance}}
     </view>
-    <view>扣除</view>
+    <view class="flex-wrap">
+      <view>扣除</view>
+      <input value="{{amount}}" placeholder="金额" type="number" class="input-wrap" bindinput="reduceInput" />
+      <view>元</view>
+    </view>
+    <view>
+      <view>备注消费内容：</view>
+      <textarea value="{{drama}}" class="beizhu" bindinput="changeDrama"></textarea>
+    </view>
+    <button class="mt20" type="primary" bindtap="reduceAmount">确定</button>
   </view>
 
-  <view wx:else>
-    23
+  <view wx:else class="lh40">
+    <view>
+      当前余额{{userInfo.balance}}, 充值后余额{{realBalance}}
+    </view>
+    <view class="flex-wrap">
+      <view>充值</view>
+      <input value="{{amount}}" placeholder="金额" type="number" class="input-wrap" bindinput="reduceInput" />
+      <view>元</view>
+    </view>
+    <button class="mt20" type="primary" bindtap="addAmount">确定</button>
   </view>
 </view>

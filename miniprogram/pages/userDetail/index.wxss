@@ -16,3 +16,28 @@
 .page-section {
   margin-bottom: 24rpx;
 }
+.lh40 {
+  line-height: 80rpx;
+  font-size: 36rpx;
+}
+.flex-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap {
+  border: 2rpx solid #ababab;
+  padding-left: 24rpx;
+  margin: 0 24rpx;
+  width: 180rpx;
+}
+
+.beizhu {
+  width: 100%;
+  height: 180rpx;
+  background-color: #ffffff;
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}
