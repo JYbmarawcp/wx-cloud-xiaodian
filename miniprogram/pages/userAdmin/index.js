@@ -6,13 +6,7 @@ Page({
     userList: []
   },
   onLoad(options) {
-    wx.cloud.database().collection('users').where({
-      phoneNumber: "18767183600",
-    }).get().then(res => {
-      this.setData({
-        userList: res.data
-      })
-    })
+
   },
   changePhone(e) {
     this.setData({

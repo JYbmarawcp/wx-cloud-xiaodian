@@ -6,9 +6,10 @@ const db = cloud.database();
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
+  const _openid = event.openid || wxContext.OPENID
   const _ = db.command
   db.collection('users').where({
-    _openid: wxContext.OPENID
+    _openid: _openid
   }).update({
     data: {
       balance: _.inc(event.totalFee),
@@ -18,8 +19,7 @@ exports.main = async (event, context) => {
   }).then(res => {
     return {
       res,
-      success: true,
-      aaaAccount: result.aaaAccount,
+      success: true
     }
   })
 }

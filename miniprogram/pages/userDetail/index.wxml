@@ -33,10 +33,15 @@
       当前余额{{userInfo.balance}}, 充值后余额{{realBalance}}
     </view>
     <view class="flex-wrap">
-      <view>充值</view>
-      <input value="{{amount}}" placeholder="金额" type="number" class="input-wrap" bindinput="reduceInput" />
+      <view>支付</view>
+      <input value="{{amount}}" placeholder="金额" type="number" class="input-wrap" bindinput="addInput" />
       <view>元</view>
     </view>
-    <button class="mt20" type="primary" bindtap="addAmount">确定</button>
+    <view class="flex-wrap">
+      <view>赠送</view>
+      <input value="{{freeAmount}}" placeholder="金额" type="number" class="input-wrap" bindinput="songInput" />
+      <view>元</view>
+    </view>
+    <button class="mt20" type="primary" bindtap="addAmount">充值</button>
   </view>
 </view>
