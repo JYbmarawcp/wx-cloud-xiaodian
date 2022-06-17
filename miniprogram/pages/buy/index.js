@@ -186,6 +186,7 @@ Page({
         // 全余额支付
         wx.cloud.database().collection('account').add({
           data: {
+            openid: this.data.userInfo._openid,
             amount: this.data.useBalance,
             type: "reduce",
             _updateTime: +new Date(),
@@ -244,6 +245,7 @@ Page({
         if (that.data.useBalance) {
           wx.cloud.database().collection('account').add({
             data: {
+              openid: that.data.userInfo._openid,
               amount: that.data.useBalance,
               type: "reduce",
               _updateTime: +new Date(),

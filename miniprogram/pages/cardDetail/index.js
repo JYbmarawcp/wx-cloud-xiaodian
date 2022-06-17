@@ -10,7 +10,7 @@ Page({
       name: 'getUser',
     }).then(res => {
       wx.cloud.database().collection('account').orderBy('_updateTime', 'desc').where({
-        _openid: res.result.userInfo._openid
+        openid: res.result.userInfo._openid
       }).get().then(res2 => {
         let cardInfo = res2.data
         cardInfo.forEach(item => {
