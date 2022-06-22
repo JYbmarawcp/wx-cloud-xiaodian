@@ -35,7 +35,7 @@
       </block>
   </view>
 
-  <button style="width: 96rpx" open-type="contact" class="default-btn contact-btn">
+  <button style="width: 96rpx" class="default-btn contact-btn" bindtap="goToContact">
     <image class="contact-icon" src="https://udh.oss-cn-hangzhou.aliyuncs.com/e35342a7-0543-459a-9464-996eb0a76bed46662118701.svg" />
     <view>预约</view>
   </button>

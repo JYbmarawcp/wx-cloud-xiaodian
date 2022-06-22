@@ -10,6 +10,13 @@
           "query": "id=058dfefe6285c9fe046424a837aa4a07",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/contact/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

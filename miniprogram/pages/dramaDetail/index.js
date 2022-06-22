@@ -70,6 +70,11 @@ Page({
       })
     }
   },
+  goToContact() {
+    wx.navigateTo({
+      url: '/pages/contact/index',
+    })
+  },
   async getPhoneNumber(e) {
     if (e.detail.errMsg == "getPhoneNumber:ok") {
         const result = await wx.cloud.callFunction({

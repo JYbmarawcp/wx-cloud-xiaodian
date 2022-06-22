@@ -20,10 +20,16 @@
       <image class="arrow-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/459cd0bd-a2b7-42c6-9b90-d76536127f428arrowright.svg" />
     </view>
 
-    <view class="marquee_container">
-      <view class="marquee_text">欢迎来到影子剧社~</view>
+    <view class="marquee_container vip-wrap mb0" bindtap="goToContact">
+      <view class="flex-center">
+        <image class="coupon-img" src="https://udh.oss-cn-hangzhou.aliyuncs.com/83a870c0-1afe-45c7-bacf-cde998523e8955881891938.svg" />
+        <span class="colorFFF">加入社群 | 领取福利</span>
+      </view>
+      <view class="flex-center">
+       <span>添加</span>
+        <image class="arrow-icon" mode="widthFix" src="https://udh.oss-cn-hangzhou.aliyuncs.com/459cd0bd-a2b7-42c6-9b90-d76536127f428arrowright.svg" />
+      </view>
     </view>
-
     <button class="default-btn marquee_container vip-wrap"
       open-type="{{userInfo.phoneNumber ? '' : 'getPhoneNumber'}}" 
       bindgetphonenumber="getPhoneNumber" 

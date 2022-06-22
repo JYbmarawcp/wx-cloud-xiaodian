@@ -12,6 +12,7 @@ page {
 .bg-top {
   width: 100%;
 }
+
 .home-content {
   position: relative;
   background-color: #262432;
@@ -164,4 +165,16 @@ page {
   display: flex;
   align-items: center;
   color: #9785a0;
+}
+.mb0 {
+  margin-bottom: 24rpx;
+}
+.coupon-img {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+
+.colorFFF {
+  color: #ffffff;
 }

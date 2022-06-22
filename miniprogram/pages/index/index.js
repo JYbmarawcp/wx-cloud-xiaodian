@@ -130,6 +130,11 @@ Page({
       })
     }
   },
+  goToContact() {
+    wx.navigateTo({
+      url: '/pages/contact/index',
+    })
+  },
   async getPhoneNumber(e) {
     wx.showLoading({
       title: '加载中',
