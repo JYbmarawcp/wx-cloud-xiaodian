@@ -59,13 +59,6 @@ Page({
     })
   },
   addAmount() {
-    if (!this.data.amount) {
-      wx.showToast({
-        icon: "none",
-        title: '请输入金额',
-      })
-      return;
-    }
     if (!this.data.freeAmount) {
       wx.showToast({
         icon: "none",
