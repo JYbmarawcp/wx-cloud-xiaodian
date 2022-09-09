@@ -1,48 +1,39 @@
 {
-    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
         },
-        "game": {
-            "list": []
+        {
+          "name": "",
+          "pathName": "pages/buy/index",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "",
+          "pathName": "pages/cardDetail/index",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide",
-                    "query": ""
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/buy/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/cardDetail/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/userAdmin/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/userDetail/index",
-                    "pathName": "pages/userDetail/index",
-                    "query": "openid=oQ6gZ5dUTKmUPXEkvJ4AO9Qyp10I",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "",
+          "pathName": "pages/userAdmin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/userDetail/index",
+          "pathName": "pages/userDetail/index",
+          "query": "openid=oQ6gZ5dUTKmUPXEkvJ4AO9Qyp10I",
+          "scene": null
         }
+      ]
     }
+  }
 }
