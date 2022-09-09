@@ -21,7 +21,10 @@ Page({
   searchUser() {
     if (this.data.phoneNumber) {
       wx.cloud.database().collection('users').where({
-        phoneNumber: this.data.phoneNumber,
+        phoneNumber: wx.cloud.database().RegExp({
+          regexp: this.data.phoneNumber,
+          options: 'i',
+        })
       }).get().then(res => {
         this.setData({
           userList: res.data

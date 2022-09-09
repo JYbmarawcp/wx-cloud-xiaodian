@@ -167,5 +167,10 @@ Page({
     wx.navigateTo({
       url: '/pages/userAdmin/index',
     })
+  },
+  goToContact() {
+    wx.navigateTo({
+      url: '/pages/contact/index',
+    })
   }
 })

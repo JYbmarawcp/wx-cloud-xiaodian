@@ -58,6 +58,7 @@ Page({
         const realPrice = that.data.balanceType[that.data.currentType].realPrice;
         wx.cloud.database().collection('account').add({
           data: {
+            openid: that.data.userInfo._openid,
             amount: realPrice,
             type: "add",
             _updateTime: +new Date(),

@@ -1,0 +1,6 @@
+<view class="contact-page">
+  <view class="contact-box">
+    <image show-menu-by-longpress="true" mode="widthFix" class="contact-img" src="https://udh.oss-cn-hangzhou.aliyuncs.com/602a204b-f03e-4f6a-9d2b-fd2c530c445e20621175029.jpg" />
+    <image show-menu-by-longpress="true" mode="widthFix" class="tips-img" src="https://udh.oss-cn-hangzhou.aliyuncs.com/af31bd91-d04e-425c-8b4f-997faf18a98020622143258.png" />
+  </view>
+</view>

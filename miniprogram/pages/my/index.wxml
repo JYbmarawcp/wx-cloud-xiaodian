@@ -76,7 +76,7 @@
       <image class="icon-arrow" src="../../images/arrow.svg"></image>
     </button>
     
-    <button style="width: 100%" open-type="contact" class="default-btn menu-item">
+    <button style="width: 100%" class="default-btn menu-item" bindtap="goToContact">
       <view class="flex-left">
         <image class="icon-left" src="https://udh.oss-cn-hangzhou.aliyuncs.com/e35342a7-0543-459a-9464-996eb0a76bed46662118701.svg"></image>
         <text>联系客服</text>

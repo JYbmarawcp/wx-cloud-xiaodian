@@ -28,7 +28,8 @@
     "pages/answer/answer",
     "pages/cardDetail/index",
     "pages/userAdmin/index",
-    "pages/userDetail/index"
+    "pages/userDetail/index",
+    "pages/contact/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

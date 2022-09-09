@@ -1,0 +1,21 @@
+.contact-page {
+  height: 100vh;
+  background-color: #585858;
+}
+
+.contact-box {
+  width: 620rpx;
+  height: 800rpx;
+  background-color: #ffffff;
+  margin: 40% auto;
+  border-radius: 20rpx;
+}
+
+.contact-img {
+  width: 100%;
+  border-radius: 20rpx;
+}
+.tips-img {
+  width: 100%;
+  border-radius: 20rpx;
+}
